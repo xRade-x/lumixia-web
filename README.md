@@ -1,6 +1,6 @@
 # Lumixia
 
-Prezentační web pro pronájem a prodej LED obrazovek a LED posterů. Navazuje na původní návrh z konverzace „Tvorba webových stránek“ a používá dodaná loga.
+Prezentační web pro pronájem LED obrazovek a LED posterů. Navazuje na původní návrh z konverzace „Tvorba webových stránek“ a používá dodaná loga.
 
 ## Průběžné úpravy
 
@@ -48,7 +48,7 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 
 ## Kontrola před zveřejněním
 
-`npm run check` ověří syntaxi skriptů. Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Původní vzhled, LED vizualizace, produkty, pronájem, prodej, využití a FAQ zůstávají zachovány.
+`npm run check` ověří syntaxi skriptů. Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Původní vzhled, LED vizualizace, produkty, krátkodobý i dlouhodobý pronájem, využití a FAQ zůstávají zachovány.
 
 ## Fotografie a LED animace
 
