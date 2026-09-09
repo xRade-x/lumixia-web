@@ -54,4 +54,6 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 
 Úvodní LED panel vykresluje nadpis skutečnou maticí světelných bodů. Jedna sekvence trvá 11 sekund: rozsvícení nadpisu, přechod do fotografie LED stěny a návrat k nadpisu. Tlačítko umožňuje animaci zastavit nebo zopakovat. Mimo viditelnou část stránky a při skrytí okna se animace zastaví. Při nastavení omezeného pohybu zůstává úvod statický.
 
-Fotografie v produktových kartách slouží jako ilustrace formátu produktu; nejsou prezentovány jako vlastní realizace Lumixia. Zdrojové odkazy jsou uvedeny přímo u fotografií a v `assets/SOURCES.md`.
+Produktové karty nyní používají studiové vizualizace vytvořené z fotografií dodaných uživatelem. Pod nimi jsou v sekci využití dva původní snímky skutečné techniky. Vizualizace jsou označené; drobné proporce a konstrukční detaily mohou být generativní retuší změněné. Původ a úpravy popisuje `assets/SOURCES.md`.
+
+Nabídka odpovídá potvrzeným interiérovým LED posterům P1.86: samostatné použití nebo sestava pěti kusů se společným obrazem 16:9. Produktové odkazy předvyplní odpovídající volbu ve formuláři. Studiové obrázky jsou uložené v úsporném WebP, původní fotografie zůstávají nezměněné. Další fotografie lze přidávat do `assets/` a sekce `#fotografie`.

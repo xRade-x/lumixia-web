@@ -61,7 +61,7 @@
     fitText('LUMIXIA', 104, 35, '#a58bff');
     fitText('OBRAZ, KTERÝ', 270, 88, '#f0fcff');
     fitText('NEPŘEHLÉDNETE.', 368, 84, '#82e8ff');
-    fitText('LED WALLS  /  LED POSTERS', 494, 25, '#b2bdd2');
+    fitText('LED POSTER P1.86  /  5x = 16:9', 494, 25, '#b2bdd2');
     return pixelate(ink);
   }
 
@@ -133,6 +133,6 @@
     ink.drawImage(photo, (W - width) / 2, (H - height) / 2, width, height);
     photoBoard = pixelate(ink);
   };
-  photo.src = 'assets/led-wall-photo.jpg';
+  photo.src = 'assets/lumixia-led-wall-studio.webp';
   document.fonts?.ready.then(() => { welcome = makeWelcome(); if (!running) staticFrame(); });
 })();

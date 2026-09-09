@@ -53,8 +53,56 @@
   .product-card:hover .product-photo { transform: none; }
 }
 
-/* U posteru zůstává vidět celé tělo i stojan. */
-.poster-preview { background: #fff; }
-.poster-photo { object-fit: contain; padding: 18px 16px 26px; }
-.product-media { min-height: 360px; }
-@media(max-width:760px) { .product-media { min-height: 330px; } }
+/* Fotografie vlastní techniky: celý produkt a společná tmavá plocha. */
+.product-media { height: 420px; min-height: 0; background: #07111f; }
+.product-photo { object-fit: contain; padding: 0; }
+.product-tag { font-size: 12px; letter-spacing: .07em; max-width: calc(100% - 36px); }
+.product-body { grid-template-columns: 1fr; gap: 18px; padding: 30px; flex: 1; }
+.product-kicker { font-size: 12px; }
+.product-body h3 { font-size: clamp(27px, 2.6vw, 34px); line-height: 1.16; }
+.product-body p { font-size: 16px; margin: 0; }
+.product-specs { display: flex; flex-wrap: wrap; gap: 8px; align-self: end; }
+.product-specs span { font-size: 13px; line-height: 1.4; background: #eef2f6;
+  border: 1px solid #e0e6ed; border-radius: 999px; padding: 6px 10px; color: #43536b; }
+.product-body .text-link { font-size: 14px; padding: 8px 0 0; align-self: end; }
+.image-note { color: #667283; font-size: 14px; margin: 22px 0 0; }
+.image-note a { color: #344d80; text-underline-offset: 3px; }
+.hero-proof { flex-wrap: wrap; }
+.hero-proof strong { font-size: 14px; }
+.hero-proof span { font-size: 12px; }
+.hero-badge strong { font-size: 14px; }
+.hero-badge small { font-size: 12px; }
+.led-replay { font-size: 14px; }
+.section-light .section-heading h2 em { background-image: linear-gradient(105deg, #375a86, #5a4b94); }
+.equipment-gallery { display: grid; grid-template-columns: 1.16fr .84fr; gap: 24px;
+  margin: 0 0 60px; scroll-margin-top: 110px; }
+.equipment-shot { margin: 0; min-width: 0; border: 1px solid rgba(255,255,255,.13);
+  border-radius: 22px; overflow: hidden; background: #0c192a; }
+.equipment-image { height: 340px; overflow: hidden; }
+.equipment-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.equipment-shot-wide img { object-position: 22% center; transform: scale(1.13); transform-origin: 22% bottom; }
+.equipment-shot figcaption { padding: 24px; }
+.equipment-shot figcaption>span { color: #a4b5cb; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.equipment-shot h3 { margin: 12px 0; font: 700 25px/1.2 Manrope, sans-serif; letter-spacing: -.025em; }
+.equipment-shot p { margin: 0; font-size: 16px; color: #a4b3c7; }
+.usecases p { font-size: 14px; }
+.usecases span { font-size: 12px; letter-spacing: .08em; }
+@media (max-width: 1020px) {
+  .product-grid { grid-template-columns: 1.16fr .84fr; }
+  .product-media { height: 340px; }
+  .product-body { padding: 24px; }
+  .equipment-gallery { gap: 18px; }
+  .equipment-image { height: 280px; }
+}
+@media (max-width: 760px) {
+  .product-grid, .equipment-gallery { grid-template-columns: 1fr; }
+  .product-media { height: auto; aspect-ratio: 3 / 2; }
+  .poster-preview { aspect-ratio: 4 / 5; max-height: 500px; }
+  .product-body { gap: 15px; }
+  .product-tag { left: 14px; top: 14px; font-size: 12px; }
+  .equipment-image { height: auto; aspect-ratio: 3 / 2; }
+  .equipment-shot figcaption { padding: 22px; }
+  .equipment-gallery { gap: 24px; margin-bottom: 40px; }
+  .hero-badge { right: 0; bottom: -42px; }
+  .led-replay { bottom: 30px; }
+}

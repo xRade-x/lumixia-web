@@ -1,23 +1,21 @@
-# Zdroje fotografií
+# Fotografie a vizualizace Lumixia
 
-## LED stěna
+Aktualizováno 9. září 2026. Podklady dodal uživatel v původní konverzaci „Tvorba webových stránek“ a požádal o jejich úpravu a použití na webu.
 
-- Soubor: `led-wall-photo.jpg`
-- Skutečná instalace Absen, Thunder Studios, Long Beach, Kalifornie; Absen Virtual Production Forum (květen 2022).
-- Publikace: American Society of Cinematographers / American Cinematographer, článek sponzorovaný Absen.
-- Zdrojová stránka: https://theasc.com/article/absen-virtual-production-forum/
-- Zdrojový obrázek: https://cdn.theasc.com/Absen-1.jpg
-- Fotografie byla zmenšena pro rychlejší načítání. Její obsah a značky zůstávají zachované.
+## Původní fotografie
 
-## LED poster
+- `lumixia-five-posters-original.jpeg` — nezměněný soubor `IMG_7873(1).jpeg`, sestava pěti posterů přehrávající společný sportovní přenos.
+- `lumixia-posters-original.jpeg` — nezměněný soubor `IMG_7881(1).jpeg`, tři samostatné postery s obsahem Lumixia v zázemí.
 
-- Soubor: `led-poster-photo.jpg`
-- Produktový snímek LED posteru Absen CPS 1.8 na kolečkách, katalog prodejce Lapshop Chile.
-- Zdrojová stránka: https://www.lapshop.cl/products/poster-led-absen-cps-1-8-con-reproductor-novastar-incorporado
-- Zdrojový obrázek: https://www.lapshop.cl/cdn/shop/files/pantalla52_1200x1500.jpg?v=1755541891
+Uživatel potvrdil interiérové provedení P1.86 a možnost spojit pět kusů do společného obrazu 16:9. Původní fotografie jsou na stránce odlišeny od studiových vizualizací; nejde o tvrzení o konkrétních zákaznických zakázkách. Snímek pod zastřešením nemění určení techniky pro interiér.
 
-## Použití
+## Studiové vizualizace podle fotografií
 
-Fotografie označují ilustrační příklady technologie, nikoli vlastní realizace nebo potvrzený inventář Lumixia. U obou je na webu odkaz na zdroj. Na zdrojových stránkách nebyla doložena otevřená licence; uvedení zdroje nepředstavuje licenci k dalšímu komerčnímu využití. Před veřejným komerčním spuštěním použijte vlastní nebo dodavatelem schválené fotografie, případně zajistěte svolení držitele práv.
+- `lumixia-led-poster-studio.webp` — vychází z levého posteru na `IMG_7881(1).jpeg`; odstraněno prostředí a ostatní postery, doplněno tmavé studiové pozadí a světlo. Rozměry 1122 × 1402 px.
+- `lumixia-led-wall-studio.webp` — vychází ze sestavy na `IMG_7873(1).jpeg`; nahrazeno prostředí a obsah displeje souvislou modrofialovou vlnou. Rozměry 1536 × 1024 px. Použito i v úvodní LED animaci.
 
-Původní loga `lumixia-logo.png` a `lumixia-mark.png` dodal uživatel a byla převzata beze změny.
+Vytvořeno vestavěným nástrojem image_gen, následně pouze zakódováno do WebP pro rychlé načítání. Generativní retuš může měnit drobné konstrukční detaily a proporce; tyto obrázky nejsou rozměrovým ani konstrukčním podkladem. Na webu jsou výslovně označeny jako vizualizace a doprovázeny původními fotografiemi.
+
+Předchozí externí ilustrační fotografie Absen / ASC a Absen / Lapshop byly nahrazeny a odstraněny z aktuálního webu. Jejich provenance zůstává v historii repozitáře.
+
+Loga `lumixia-logo.png` a `lumixia-mark.png` dodal uživatel a zůstávají beze změny.
