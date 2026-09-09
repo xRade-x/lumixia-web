@@ -9,6 +9,7 @@ Napište požadovanou změnu v úkolu Lumixia v Codexu. Úprava se provede ve zd
 - `index.html` — texty, sekce, navigace a formulář.
 - `styles.css` — barvy, rozložení a mobilní zobrazení.
 - `script.js` — menu, výběr produktu a ukázkový formulář.
+- `led-display.js` — animovaná bodová LED matice v úvodu.
 - `assets/lumixia-logo.png` — logo s názvem.
 - `assets/lumixia-mark.png` — značka / ikona webu.
 
@@ -48,3 +49,9 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 ## Kontrola před zveřejněním
 
 `npm run check` ověří syntaxi skriptů. Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Původní vzhled, LED vizualizace, produkty, pronájem, prodej, využití a FAQ zůstávají zachovány.
+
+## Fotografie a LED animace
+
+Úvodní LED panel vykresluje nadpis skutečnou maticí světelných bodů. Jedna sekvence trvá 11 sekund: rozsvícení nadpisu, přechod do fotografie LED stěny a návrat k nadpisu. Tlačítko umožňuje animaci zastavit nebo zopakovat. Mimo viditelnou část stránky a při skrytí okna se animace zastaví. Při nastavení omezeného pohybu zůstává úvod statický.
+
+Fotografie v produktových kartách slouží jako ilustrace formátu produktu; nejsou prezentovány jako vlastní realizace Lumixia. Zdrojové odkazy jsou uvedeny přímo u fotografií a v `assets/SOURCES.md`.

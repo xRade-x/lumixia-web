@@ -56,18 +56,18 @@
             <div><strong>Modulární</strong><span>rozměr podle prostoru</span></div>
           </div>
         </div>
-        <div class="hero-visual" aria-label="Vizualizace LED stěny">
+        <div class="hero-visual" aria-label="Animovaná LED stěna Lumixia">
           <div class="visual-glow"></div>
           <div class="led-wall">
-            <div class="wall-topline"><span>LUMIXIA / LED SYSTEM</span><span>LIVE VISUAL</span></div>
-            <div class="led-art">
-              <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
-              <div class="art-text">MAKE<br /><span>THE MOMENT</span><small>VISIBLE</small></div>
-              <div class="scanlines"></div>
+            <div class="wall-topline"><span>LUMIXIA / LED SYSTEM</span><span>PIXEL BY PIXEL</span></div>
+            <div class="led-art led-display">
+              <div class="led-fallback" aria-hidden="true">OBRAZ, KTERÝ<br /><strong>NEPŘEHLÉDNETE.</strong></div>
+              <canvas id="ledCanvas" width="960" height="576" role="img" aria-label="LED obrazovka: Obraz, který nepřehlédnete. Animace rozsvěcení jednotlivých pixelů a fotografie LED stěny."></canvas>
             </div>
-            <div class="wall-bottomline"><span>4K • HDR • HIGH BRIGHTNESS</span><span class="live-dot">● LIVE</span></div>
+            <div class="wall-bottomline"><span>LED WALL / LUMIXIA</span><span class="live-dot">● ON AIR</span></div>
           </div>
           <div class="hero-device-shadow"></div>
+          <button class="led-replay" id="ledReplay" type="button" hidden>Přehrát animaci <span aria-hidden="true">↻</span></button>
           <div class="hero-badge"><span>01</span><div><strong>Velkoplošná LED</strong><small>na míru prostoru</small></div></div>
         </div>
       </div>
@@ -83,14 +83,16 @@
         <div class="product-grid">
           <article class="product-card product-card-large">
             <div class="product-media wall-preview">
-              <div class="mini-wall"><div class="mini-title">YOUR<br /><b>VISION</b><span>ON DISPLAY</span></div><div class="mini-orb"></div></div>
+              <img class="product-photo wall-photo" src="assets/led-wall-photo.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Skutečná zakřivená LED stěna Absen v Thunder Studios s modrým obrazem a LED stropem" />
+              <a class="photo-credit" href="https://theasc.com/article/absen-virtual-production-forum/" target="_blank" rel="noopener noreferrer">Ilustrační foto · Absen / ASC ↗</a>
               <span class="product-tag">01 / LED Wall</span>
             </div>
             <div class="product-body"><div><div class="product-kicker">Velkoplošné LED obrazovky</div><h3>LED Wall</h3></div><p>Modulární řešení pro konference, stage, festivaly, sport, showroomy a trvalé instalace.</p><a class="text-link" href="#poptavka" data-product="LED Wall">Zjistit možnosti <span>→</span></a></div>
           </article>
           <article class="product-card">
             <div class="product-media poster-preview">
-              <div class="poster-device"><div class="poster-screen"><span>SALE</span><b>24.7</b><small>NEW COLLECTION</small></div><div class="poster-base"></div></div>
+              <img class="product-photo poster-photo" src="assets/led-poster-photo.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="Samostatně stojící LED poster Absen CPS 1.8 na kolečkách, s barevným obrazem přes celou výšku" />
+              <a class="photo-credit" href="https://www.lapshop.cl/products/poster-led-absen-cps-1-8-con-reproductor-novastar-incorporado" target="_blank" rel="noopener noreferrer">Ilustrační foto · Absen / Lapshop ↗</a>
               <span class="product-tag">02 / LED Poster</span>
             </div>
             <div class="product-body"><div><div class="product-kicker">Samostatně stojící obrazovky</div><h3>LED Poster</h3></div><p>Elegantní plug &amp; play formát pro retail, veletrhy, recepce, hotely a promo zóny.</p><a class="text-link" href="#poptavka" data-product="LED Poster">Zjistit možnosti <span>→</span></a></div>
@@ -160,5 +162,6 @@
   <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><img src="assets/lumixia-logo.png" alt="Lumixia" /><p>Pronájem &amp; prodej LED obrazovek.<br />Technologie pro výraznější prezentaci.</p></div><div class="footer-links"><div><span>Procházet</span><a href="#produkty">Produkty</a><a href="#pronajem">Pronájem</a><a href="#prodej">Prodej</a></div><div><span>Informace</span><a href="#realizace">Realizace</a><a href="#faq">FAQ</a><a href="#poptavka">Poptávka</a></div><div><span>Kontakt</span><a href="#poptavka">Nezávazná poptávka</a><a href="#top">Zpět nahoru ↑</a></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Lumixia</span><span>LED • DIGITAL • EXPERIENCE</span></div></footer>
 
   <script src="script.js"></script>
+  <script src="led-display.js" defer></script>
 </body>
 </html>
