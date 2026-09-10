@@ -53,7 +53,7 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 
 ## Fotografie a srovnání pixelů
 
-Úvod přehrává desetisekundovou animaci loga na společné obrazové ploše pěti posterů, perspektivně zasazenou do fotografie. Rám a podstavce zůstávají statické. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou, bez dělicích čar uvnitř obrazové plochy.
+Úvod přehrává desetisekundovou animaci loga na společné obrazové ploše pěti posterů, vloženou do čelní studiové vizualizace. Všech pět posterů má stejný nízký podstavec a obraz neobsahuje dělicí čáry. Rám a podstavce zůstávají statické. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou, bez dělicích čar uvnitř obrazové plochy.
 
 Produktové vizualizace vycházejí z fotografií uživatele. Galerie obsahuje původní snímek propojené sestavy a upravenou fotografii tří posterů v showroomovém prostředí. Úprava prostředí je označená. Podrobnosti jsou v `assets/SOURCES.md`.
 
@@ -65,4 +65,10 @@ Srovnání pixelů v samostatné sekci technologie používá stejný schematick
 
 Redesign z 10. září 2026 používá plakátovou typografii Barlow Condensed, velkou animovanou sestavu v úvodu, nestejně široké produktové sloupce a posunuté fotografie. Rovné hrany, jednoduché linky a jeden souvislý tyrkysový blok pronájmu nahrazují obalové karty, přechody a dekorativní efekty. Barvy a typografie jsou v proměnných na začátku `styles.css`.
 
-Hlavní text na světlé ploše používá #08131f, vedlejší #54616b; na tmavé ploše #f2f4f5 a #b7c8d6. Základní textové kombinace mají kontrast alespoň 5,7 : 1. Pořadí sekcí: úvod → technika → fotografie a využití → pronájem → technologie a pixely → FAQ → poptávka. Původní provedení je dostupné v historii Git.
+Hlavní text na světlé ploše používá #08131f, vedlejší #54616b; na tmavé ploše #f2f4f5 a #b7c8d6. Základní textové kombinace mají kontrast alespoň 5,7 : 1. Pořadí sekcí: přímá nabídka pronájmu pro firmy → firemní využití → výběr obrazovky → fotografie → průběh pronájmu → technologie a pixely → FAQ → poptávka. Původní provedení je dostupné v historii Git.
+
+## Zaměření na firemní akce
+
+Úvod začíná srozumitelným nadpisem „Pronájem LED posterů pro firemní akce“. Světlý prostor pro hlavní nabídku doplňuje tmavá fotografie s animací. Namísto samotného velkého sloganu a technických parametrů následují tři konkrétní firemní scénáře: veletrhy, konference / eventy a showroomy / recepce. Sport je vedlejší využití a svatba je pouze krátce zmíněna. Největší fotografie v galerii ukazuje reklamní obsah.
+
+Odkazy u scénářů předvyplní nové pole využití v existující poptávce. Výchozí volba techniky nechává návštěvníka požádat o radu. Formulář nadále zůstává ukázkový a nic neodesílá.

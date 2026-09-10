@@ -27,6 +27,17 @@ document.querySelectorAll('[data-product]').forEach(link => {
 });
 
 const form = document.querySelector('#quoteForm');
+// Carry the visitor's intended use into the existing enquiry form.
+document.querySelectorAll('[data-occasion]').forEach(link => {
+  link.addEventListener('click', () => {
+    const occasion = document.querySelector('#occasion');
+    const value = link.dataset.occasion;
+    if (occasion && [...occasion.options].some(option => option.value === value)) {
+      occasion.value = value;
+    }
+  });
+});
+
 const success = document.querySelector('#formSuccess');
 if (form) {
   form.addEventListener('submit', (event) => {
