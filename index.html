@@ -9,106 +9,115 @@
   <link rel="icon" href="assets/lumixia-mark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
+  <a class="skip-link" href="#obsah">Přejít na obsah</a>
   <header class="site-header" id="top">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Lumixia domů">
-        <img src="assets/lumixia-logo.png" alt="Lumixia" />
-      </a>
+      <a class="brand" href="#top" aria-label="Lumixia domů"><img src="assets/lumixia-logo.png" width="156" alt="Lumixia" /></a>
+      <p class="header-caption">Pronájem<br />LED techniky</p>
       <nav class="desktop-nav" aria-label="Hlavní navigace">
-        <a href="#produkty">Produkty</a>
-        <a href="#pronajem">Pronájem</a>
-        <a href="#dlouhodoby-pronajem">Dlouhodobě</a>
-        <a href="#realizace">Využití</a>
-        <a href="#faq">FAQ</a>
+        <a href="#produkty">Technika</a><a href="#realizace">Využití</a><a href="#pronajem">Jak to funguje</a>
       </nav>
-      <a class="btn btn-small btn-primary" href="#poptavka">Nezávazná poptávka <span>↗</span></a>
-      <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      <a class="nav-enquiry" href="#poptavka">Poptat pronájem</a>
+      <button class="menu-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
     </div>
-    <div class="mobile-nav" id="mobile-nav" hidden>
-      <a href="#produkty">Produkty</a>
-      <a href="#pronajem">Pronájem</a>
-      <a href="#dlouhodoby-pronajem">Dlouhodobě</a>
-      <a href="#realizace">Využití</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-primary" href="#poptavka">Nezávazná poptávka</a>
-    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobilní navigace" hidden>
+      <a href="#produkty">Technika</a><a href="#realizace">Využití</a><a href="#pronajem">Jak to funguje</a>
+      <a href="#dlouhodoby-pronajem">Dlouhodobý pronájem</a><a href="#technologie">Rozteč pixelů</a><a href="#faq">Časté otázky</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-grid container">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Pronájem LED posterů P1.86</div>
-          <h1>Obraz, který<br /><em>nepřehlédnete.</em></h1>
-          <p class="hero-lead">Jeden LED poster pro vaši značku. Pět propojených posterů pro velký obraz 16:9. Pronájem pro konference, veletrhy, showroomy i firemní akce.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#poptavka">Poptat pronájem <span>→</span></a>
-            <a class="btn btn-ghost" href="#produkty">Prohlédnout produkty</a>
+  <main id="obsah">
+    <section class="hero dark" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="section-label"><span>LED POSTERY A SPOJENÉ SESTAVY</span><span>P1.86 / PRO INTERIÉRY</span></div>
+        <h1 class="hero-title" id="heroTitle"><span>Buďte</span> <em>vidět.</em></h1>
+        <div class="hero-stage">
+          <div class="hero-intro">
+            <p>Vaše značka. Vaše akce. Obraz, který přitáhne pohledy. Pronajměte si jeden LED poster nebo pět spojených v&nbsp;jednu velkou obrazovku.</p>
+            <a class="btn btn-primary" href="#poptavka">Poptat pronájem <span aria-hidden="true">↗</span></a>
+            <a class="hero-secondary" href="#produkty">Prohlédnout techniku</a>
           </div>
-          <div class="hero-proof">
-            <div><strong>P1.86</strong><span>rozteč pixelů 1,86 mm</span></div>
-            <div><strong>Indoor</strong><span>pro vnitřní prostory</span></div>
-            <div><strong>5 ks → 16:9</strong><span>jeden společný obraz</span></div>
-          </div>
-        </div>
-        <div class="hero-visual">
           <figure class="hero-product">
             <video id="heroVideo" width="1536" height="1024" poster="assets/lumixia-led-wall-animation-poster.webp" preload="metadata" muted loop playsinline controls aria-label="Animace loga Lumixia na společné obrazové ploše pěti spojených LED posterů">
               <source src="assets/lumixia-led-wall-animation.mp4" type="video/mp4" />
               <a href="assets/lumixia-led-wall-animation.mp4">Přehrát animaci na LED posterech</a>
             </video>
-            <figcaption><strong>5× LED Poster P1.86</strong><span>Jeden souvislý obraz 16:9</span></figcaption>
-            <button class="hero-video-toggle" type="button" aria-controls="heroVideo" hidden>Přehrát animaci</button>
+            <figcaption class="hero-media-caption"><span>5× LED POSTER / JEDEN SOUVISLÝ OBRAZ</span><button class="hero-video-toggle" type="button" aria-controls="heroVideo" hidden>Přehrát animaci</button></figcaption>
           </figure>
         </div>
+        <div class="hero-specs" aria-label="Základní parametry">
+          <div><strong>P1.86</strong><span>Rozteč pixelů 1,86 mm</span></div>
+          <div><strong>1 NEBO 5</strong><span>Samostatně i jako sestava</span></div>
+          <div><strong>16:9</strong><span>Formát spojené obrazovky</span></div>
+        </div>
       </div>
-      <div class="marquee" aria-hidden="true"><div class="marquee-inner"><span>LED WALLS</span><i>✦</i><span>LED POSTERS</span><i>✦</i><span>EVENTS</span><i>✦</i><span>RETAIL</span><i>✦</i><span>SHOWROOMS</span><i>✦</i><span>LED WALLS</span><i>✦</i><span>LED POSTERS</span></div></div>
     </section>
 
-    <section class="section section-light" id="produkty">
+    <section class="section catalog" id="produkty">
       <div class="container">
-        <div class="section-heading split-heading">
-          <div><div class="eyebrow dark"><span class="eyebrow-dot"></span> Naše technologie</div><h2>Jeden systém.<br /><em>Dva formáty.</em></h2></div>
-          <p>Samostatný poster přitáhne pozornost na výšku. Spojením pěti stejných kusů vznikne širokoúhlá obrazovka 16:9. V obou případech interiérová LED technologie P1.86.</p>
-        </div>
+        <div class="section-label"><span>01 / TECHNIKA K PRONÁJMU</span><span>JEDEN SYSTÉM, DVA FORMÁTY</span></div>
+        <div class="catalog-heading"><h2>Sólo.<br />Nebo spolu.</h2><p>Na recepci stačí jeden výrazný bod. Pro prezentaci nebo společný přenos spojíme pět posterů do souvislé obrazovky. Vyberte si podle prostoru a obsahu.</p></div>
         <div class="product-grid">
-          <article class="product-card product-card-large">
-            <div class="product-media wall-preview">
-              <img class="product-photo wall-photo" src="assets/lumixia-led-wall-seamless.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Vizualizace sestavy pěti LED posterů Lumixia se společným modrofialovým obrazem a nízkými podstavci na kolečkách" />
-              <span class="product-tag">01 / Sestava 5× LED Poster</span>
-            </div>
-            <div class="product-body"><div><div class="product-kicker">Pět posterů, jeden obraz</div><h3>LED sestava 16:9</h3></div><p>Pro prezentaci na konferenci, firemní akci nebo společné sledování přenosu v interiéru. Pět propojených posterů přehrává jeden širokoúhlý obraz.</p><div class="product-specs"><span>P1.86</span><span>5 propojených kusů</span><span>Indoor</span></div><a class="text-link" href="#poptavka" data-product="sestavy 5× LED Poster">Poptat sestavu <span>→</span></a></div>
+          <article class="product-item product-solo">
+            <div class="product-heading"><h3>Sólo</h3><span>01 / LED POSTER</span></div>
+            <div class="product-media poster-media"><img src="assets/lumixia-led-poster-studio.webp" width="1122" height="1402" loading="lazy" decoding="async" alt="Samostatný LED poster Lumixia s logem, vysokým černým rámem a podstavcem na kolečkách" /></div>
+            <div class="product-copy"><h4>Vaše značka na výšku.</h4><p>Samostatně stojící LED Poster P1.86 pro stánek, recepci nebo showroom. Přehrává video, reklamní grafiku i nabídku. Každý poster může mít vlastní obsah.</p><div class="spec-row"><span>Samostatný poster</span><span>P1.86</span><span>Indoor</span></div><a class="text-link" href="#poptavka" data-product="samostatného LED Posteru">Poptat jeden poster <span aria-hidden="true">↗</span></a></div>
           </article>
-          <article class="product-card">
-            <div class="product-media poster-preview">
-              <img class="product-photo poster-photo" src="assets/lumixia-led-poster-studio.webp" width="1122" height="1402" loading="lazy" decoding="async" alt="Vizualizace samostatného vysokého LED posteru s logem Lumixia, černým rámem a podstavcem na kolečkách" />
-              <span class="product-tag">02 / LED Poster</span>
-            </div>
-            <div class="product-body"><div><div class="product-kicker">Vaše značka na výšku</div><h3>LED Poster P1.86</h3></div><p>Samostatně stojící displej na kolečkách pro veletržní stánek, recepci, showroom nebo promo zónu. Pro video, nabídku i grafiku vaší značky.</p><div class="product-specs"><span>P1.86</span><span>Samostatný poster</span><span>Indoor</span></div><a class="text-link" href="#poptavka" data-product="samostatného LED Posteru">Poptat poster <span>→</span></a></div>
+          <article class="product-item product-wall">
+            <div class="product-heading"><h3>Spolu</h3><span>02 / SESTAVA 5 KUSŮ</span></div>
+            <div class="product-media"><img src="assets/lumixia-led-wall-seamless.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Pět spojených LED posterů Lumixia s jedním souvislým modrofialovým obrazem bez viditelných spojů uvnitř displeje" /></div>
+            <div class="product-copy"><h4>Pět posterů. Jeden velký obraz.</h4><p>Širokoúhlá sestava 16:9 pro prezentace na konferencích, firemní akce nebo společné sledování přenosu. Obsah plynule pokračuje přes celou obrazovou plochu.</p><div class="spec-row"><span>5 propojených kusů</span><span>Formát 16:9</span><span>Indoor</span></div><a class="text-link" href="#poptavka" data-product="sestavy 5× LED Poster">Poptat celou sestavu <span aria-hidden="true">↗</span></a></div>
           </article>
         </div>
-        <p class="image-note">Studiové vizualizace vycházejí z fotografií naší techniky. Další ukázky najdete <a href="#fotografie">níže na stránce</a>.</p>
+        <p class="image-note">Studiové vizualizace vycházejí z fotografií naší techniky. Další ukázky najdete <a href="#fotografie">hned níže</a>.</p>
       </div>
     </section>
 
-    <section class="section dark-section" id="pronajem">
-      <div class="container service-grid">
-        <div class="service-intro"><div class="eyebrow"><span class="eyebrow-dot"></span> Pronájem</div><h2>Pro jednu noc.<br /><em>Pro celý projekt.</em></h2><p>Dodáme technologii, konstrukci i obsluhu. Vy řešíte obsah a zážitek — my zajistíme, aby obraz fungoval.</p><a class="btn btn-outline" href="#poptavka">Poptat pronájem <span>↗</span></a></div>
+    <section class="section showcase" id="realizace">
+      <div class="container">
+        <div class="section-label"><span>02 / OBRAZ V PROSTORU</span><span>OD ZNAČKY PO SPOLEČNÝ ZÁŽITEK</span></div>
+        <div class="showcase-title"><h2>Obsah mění<br />atmosféru.</h2><p>Pozvánka u vstupu. Produkt ve výloze. Přenos, u kterého se lidé zastaví. Stejná technika, pokaždé jiná role.</p></div>
+        <div class="equipment-gallery" id="fotografie" aria-label="Fotografie a vizualizace LED posterů Lumixia">
+          <figure class="equipment-shot equipment-shot-wide">
+            <div class="equipment-image"><img src="assets/lumixia-five-posters-original.jpeg" width="1536" height="707" loading="lazy" decoding="async" alt="Původní fotografie pěti spojených LED posterů Lumixia se společným sportovním přenosem pod zastřešením" /></div>
+            <figcaption><span>SESTAVA / SPOLEČNÝ PŘENOS</span><h3>Jeden obraz pro všechny.</h3><p>Původní fotografie propojených posterů při přehrávání společného obsahu. Tato technika je určená do interiéru.</p></figcaption>
+          </figure>
+          <figure class="equipment-shot">
+            <div class="equipment-image"><img src="assets/lumixia-posters-showroom.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Tři samostatné LED postery Lumixia s reklamní grafikou v upraveném showroomovém prostředí" /></div>
+            <figcaption><span>POSTERY / VLASTNÍ OBSAH</span><h3>Každý vypráví své.</h3><p>Tři samostatné postery s grafikou Lumixia. Fotografie má upravené prostředí; ukazuje možnosti prezentace vaší značky.</p></figcaption>
+          </figure>
+        </div>
+        <div class="usecases">
+          <article><div class="uc-number">01</div><h3>Eventy &amp; stage</h3><p>Hlavní vizuál konference, koncertu, galavečera nebo firemního eventu.</p><span>LED Wall</span></article>
+          <article><div class="uc-number">02</div><h3>Retail &amp; showroom</h3><p>Dynamický obsah, promo kampaně a výrazný digitální bod přímo v prodejním prostoru.</p><span>LED Poster</span></article>
+          <article><div class="uc-number">03</div><h3>Sportovní přenosy</h3><p>Společné sledování zápasu v klubovně, sále nebo jiné vnitřní fan zóně.</p><span>Sestava 16:9</span></article>
+          <article><div class="uc-number">04</div><h3>Veletrhy &amp; prezentace</h3><p>Vystavujte obsah stejně sebevědomě jako produkt. Bez složitého setupu.</p><span>Modulární</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rental" id="pronajem">
+      <div class="container">
+        <div class="section-label"><span>03 / PRONÁJEM OD A DO Z</span><span>DOMLUVÍME. PŘIVEZEME. ZAPOJÍME.</span></div>
+        <div class="rental-title"><h2>Vy dodáte obsah.<br />My techniku.</h2><div><p>Od výběru formátu po poslední kabel. Rozsah dopravy, instalace a obsluhy domluvíme podle vaší akce.</p><a class="btn btn-dark" href="#poptavka">Domluvit pronájem <span aria-hidden="true">↗</span></a></div></div>
         <div class="steps">
-          <div class="step"><span>01</span><div><h3>Poradíme s formátem</h3><p>Podle vzdálenosti diváka, prostředí, obsahu a rozpočtu navrhneme vhodné řešení.</p></div></div>
-          <div class="step"><span>02</span><div><h3>Přivezeme &amp; postavíme</h3><p>Montáž, zapojení, test signálu a základní obsluha jsou součástí zajištění projektu.</p></div></div>
-          <div class="step"><span>03</span><div><h3>Po akci odvezeme</h3><p>Demontáž proběhne bez starostí. Po dohodě lze zajistit i technický dohled během celé akce.</p></div></div>
+          <div class="step"><span>01</span><div><h3>Vybereme správný formát</h3><p>Projdeme prostor, obsah a vzdálenost diváků. Doporučíme samostatný poster nebo spojenou sestavu.</p></div></div>
+          <div class="step"><span>02</span><div><h3>Přivezeme a zprovozníme</h3><p>Postery postavíme, zapojíme a ověříme přehrávání. Technický dohled během akce zajistíme po dohodě.</p></div></div>
+          <div class="step"><span>03</span><div><h3>Po akci se postaráme o odvoz</h3><p>Ve sjednaném termínu techniku odpojíme, sbalíme a odvezeme.</p></div></div>
         </div>
+        <div class="long-rental" id="dlouhodoby-pronajem"><h3>Jedna akce.<br />I celé měsíce.</h3><p>Potřebujete obrazovku na delší kampaň nebo do showroomu? Domluvíme délku pronájmu, instalaci i servis podle vašeho prostoru.</p><a class="text-link" href="#poptavka" data-product="Dlouhodobý pronájem">Dlouhodobý pronájem <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
-    <section class="section section-light" id="dlouhodoby-pronajem">
-      <div class="container sale-grid">
+    <section class="section dark technology" id="technologie">
+      <div class="container">
+        <div class="section-label"><span>04 / ZBLÍZKA</span><span>TECHNOLOGIE P1.86</span></div>
+        <div class="technology-heading">
+          <div class="technology-copy"><h2>Na detailu<br />záleží.</h2><div class="pitch-number">1,86<span>mm</span></div><p>Taková je rozteč sousedních pixelů našich posterů. Jemnost obrazu řešíme společně s místem, odkud se na něj budou lidé dívat.</p></div>
         <div class="pixel-guide" id="pixelGuide">
           <div class="eyebrow"><span class="eyebrow-dot"></span> Detail rozhoduje</div>
           <h3>Blíž k obrazu.<br />Jemnější pixely.</h3>
@@ -140,36 +149,31 @@
           <p class="pixel-note">Zvětšené schéma pixelů. Komfort závisí také na zraku, velikosti textu a obsahu; nejde o hranici, od které pixely zcela zmizí. P2.5 a P3.9 slouží ke srovnání.</p>
           <a class="pixel-source" href="https://www.planar.com/blog/2025/what-is-pixel-pitch-and-why-does-it-matter/" target="_blank" rel="noopener noreferrer">Orientační výpočet podle Planar ↗</a>
         </div>
-        <div class="sale-copy"><div class="eyebrow dark"><span class="eyebrow-dot"></span> Dlouhodobý pronájem</div><h2>Technologie,<br /><em>kterou si pronajmete.</em></h2><p>LED stěna nebo poster pro vaši kampaň, showroom či dlouhodobý projekt. Délku pronájmu, velikost obrazovky i způsob instalace přizpůsobíme vašemu prostoru a způsobu využití.</p><div class="spec-list"><div><span>01</span><strong>Délka pronájmu podle potřeby</strong></div><div><span>02</span><strong>Dodání a instalace</strong></div><div><span>03</span><strong>Servis &amp; technická podpora</strong></div></div><a class="btn btn-dark" href="#poptavka" data-product="Dlouhodobý pronájem">Poptat dlouhodobý pronájem <span>→</span></a></div>
+
+        </div>
       </div>
     </section>
 
-    <section class="section dark-section showcase" id="realizace">
+    <section class="section" id="faq">
       <div class="container">
-        <div class="section-heading centered"><div class="eyebrow"><span class="eyebrow-dot"></span> Kde LED dává smysl</div><h2>Jeden systém.<br /><em>Spousta scénářů.</em></h2></div>
-        <div class="equipment-gallery" id="fotografie" aria-label="Fotografie a vizualizace LED posterů Lumixia">
-          <figure class="equipment-shot equipment-shot-wide">
-            <div class="equipment-image"><img src="assets/lumixia-five-posters-original.jpeg" width="1536" height="707" loading="lazy" decoding="async" alt="Původní fotografie pěti spojených LED posterů Lumixia se sportovním přenosem pod zastřešením" /></div>
-            <figcaption><span>01 / SPOJENÁ SESTAVA</span><h3>Pět kusů. Jeden velký obraz.</h3><p>Původní fotografie propojených posterů při přehrávání společného obsahu. Tato technika je určená do interiéru.</p></figcaption>
-          </figure>
-          <figure class="equipment-shot">
-            <div class="equipment-image"><img src="assets/lumixia-posters-showroom.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Upravená fotografie tří samostatných LED posterů Lumixia v čistém showroomu, s logem a reklamní grafikou" /></div>
-            <figcaption><span>02 / SAMOSTATNÉ POSTERY</span><h3>Každý s vlastním obsahem.</h3><p>Tři samostatné postery s grafikou Lumixia. Fotografie má upravené prostředí; ukazuje možnosti prezentace vaší značky.</p></figcaption>
-          </figure>
-        </div>
-        <div class="usecases">
-          <article><div class="uc-number">01</div><h3>Eventy &amp; stage</h3><p>Hlavní vizuál konference, koncertu, galavečera nebo firemního eventu.</p><span>LED Wall</span></article>
-          <article><div class="uc-number">02</div><h3>Retail &amp; showroom</h3><p>Dynamický obsah, promo kampaně a výrazný digitální bod přímo v prodejním prostoru.</p><span>LED Poster</span></article>
-          <article><div class="uc-number">03</div><h3>Sportovní přenosy</h3><p>Společné sledování zápasu v klubovně, sále nebo jiné vnitřní fan zóně.</p><span>Sestava 16:9</span></article>
-          <article><div class="uc-number">04</div><h3>Veletrhy &amp; prezentace</h3><p>Vystavujte obsah stejně sebevědomě jako produkt. Bez složitého setupu.</p><span>Modulární</span></article>
-        </div>
+        <div class="section-label"><span>05 / DOBRÉ VĚDĚT</span><span>PŘED PRONÁJMEM</span></div>
+        <div class="faq-grid"><div class="faq-intro"><h2>Ještě<br />něco?</h2><p>Tady jsou odpovědi na časté otázky. Konkrétní prostor a termín probereme u vaší poptávky.</p></div><div class="faq-list">
+        <details open><summary>Jak rychle dokážete dodat LED obrazovku?</summary><p>Záleží na rozměru, termínu a typu řešení. U běžných pronájmů doporučujeme rezervaci co nejdříve; v urgentních případech nejprve ověříme dostupnost techniky.</p></details>
+        <details><summary>Je v ceně pronájmu i montáž?</summary><p>Projekt můžeme dodat jako kompletní službu včetně dopravy, konstrukce, instalace a technické obsluhy. Přesný rozsah vždy nastavíme podle akce.</p></details>
+        <details><summary>Co znamená P1.86?</summary><p>Jde o rozteč sousedních pixelů 1,86 mm. Vhodné umístění posteru zvolíme podle prostoru, obsahu a vzdálenosti diváků.</p></details>
+        <details><summary>Dají se postery spojit do velké obrazovky?</summary><p>Ano. Pět LED posterů vedle sebe vytvoří sestavu s poměrem obrazu 16:9, na které lze přehrávat jeden společný obsah.</p></details>
+        <details><summary>Jsou tyto postery vhodné ven?</summary><p>Tyto LED postery P1.86 jsou určené pro vnitřní prostory. S venkovním použitím u této techniky nepočítáme.</p></details>
+      </div></div>
       </div>
     </section>
 
-    <section class="section section-light quote-section" id="poptavka">
-      <div class="container quote-grid">
-        <div class="quote-intro"><div class="eyebrow dark"><span class="eyebrow-dot"></span> Nezávazná poptávka</div><h2>Řekněte nám<br /><em>o projektu.</em></h2><p>Vyplňte několik základních údajů o projektu. Formulář si zatím můžete vyzkoušet nanečisto; poptávka se nikam neodesílá.</p><div class="trust-row"><span>✓ bez závazku</span><span>✓ návrh řešení</span><span>✓ rychlá reakce</span></div></div>
-        <form class="quote-form" id="quoteForm">
+    <section class="section dark quote-section" id="poptavka">
+      <div class="container">
+        <div class="section-label"><span>06 / POJĎME TO DOMLUVIT</span><span>NEZÁVAZNÁ POPTÁVKA</span></div>
+        <h2 class="quote-title">Co chystáte?</h2>
+        <div class="quote-grid">
+          <div class="quote-intro"><h3>Stačí termín, místo a vaše představa.</h3><p>Jeden poster, velká sestava nebo dlouhodobý pronájem. Popište, co potřebujete zobrazit a pro koho.</p><div class="demo-note"><strong>Formulář zatím na zkoušku</strong>Web právě připravujeme. Údaje se uloží jen ve vašem prohlížeči, poptávka se nikam neodesílá.</div></div>
+<form class="quote-form" id="quoteForm">
           <div class="form-row"><label>Co potřebujete?<select name="type" id="type"><option value="Pronájem sestavy 5× LED Poster">Pronájem sestavy 5× LED Poster</option><option value="Pronájem samostatného LED Posteru">Pronájem samostatného LED Posteru</option><option value="Dlouhodobý pronájem">Dlouhodobý pronájem</option><option value="Nevím — potřebuji poradit">Nevím — potřebuji poradit</option></select></label><label>Počet posterů / sestav<input name="size" id="size" placeholder="např. 2 postery / 1 sestava 16:9" /></label></div>
           <div class="form-row"><label>Termín nebo délka<input name="date" id="date" placeholder="např. 12.–14. 6. / 3 dny" /></label><label>Místo realizace<input name="location" id="location" placeholder="město / areál" /></label></div>
           <label>Váš e-mail<input type="email" name="email" id="email" placeholder="jmeno@firma.cz" required /></label>
@@ -177,24 +181,18 @@
           <div class="form-bottom"><button class="btn btn-dark" type="submit">Uložit poptávku nanečisto <span>↗</span></button><small>Ukázkový formulář: údaje se uloží jen v tomto prohlížeči. Lumixia je neobdrží.</small></div>
           <div class="form-success" id="formSuccess" role="status" hidden>✓ Děkujeme. Poptávka byla připravena. V této demo verzi se data ukládají pouze do vašeho prohlížeče.</div>
         </form>
+        </div>
       </div>
     </section>
-
-    <section class="section faq-section" id="faq">
-      <div class="container faq-grid"><div><div class="eyebrow dark"><span class="eyebrow-dot"></span> FAQ</div><h2>Časté<br /><em>otázky.</em></h2></div><div class="faq-list">
-        <details open><summary>Jak rychle dokážete dodat LED obrazovku?</summary><p>Záleží na rozměru, termínu a typu řešení. U běžných pronájmů doporučujeme rezervaci co nejdříve; v urgentních případech nejprve ověříme dostupnost techniky.</p></details>
-        <details><summary>Je v ceně pronájmu i montáž?</summary><p>Projekt můžeme dodat jako kompletní službu včetně dopravy, konstrukce, instalace a technické obsluhy. Přesný rozsah vždy nastavíme podle akce.</p></details>
-        <details><summary>Co znamená P1.86?</summary><p>Jde o rozteč sousedních pixelů 1,86 mm. Vhodné umístění posteru zvolíme podle prostoru, obsahu a vzdálenosti diváků.</p></details>
-        <details><summary>Dají se postery spojit do velké obrazovky?</summary><p>Ano. Pět LED posterů vedle sebe vytvoří sestavu s poměrem obrazu 16:9, na které lze přehrávat jeden společný obsah.</p></details>
-        <details><summary>Jsou tyto postery vhodné ven?</summary><p>Tyto LED postery P1.86 jsou určené pro vnitřní prostory. S venkovním použitím u této techniky nepočítáme.</p></details>
-      </div></div>
-    </section>
-
-    <section class="footer-cta"><div class="container footer-cta-inner"><div><span class="eyebrow"><span class="eyebrow-dot"></span> Lumixia</span><h2>Máte prostor.<br /><em>My máme obraz.</em></h2></div><a class="btn btn-primary" href="#poptavka">Nezávazně poptat <span>→</span></a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><img src="assets/lumixia-logo.png" alt="Lumixia" /><p>Pronájem LED obrazovek a posterů.<br />Technologie pro výraznější prezentaci.</p></div><div class="footer-links"><div><span>Procházet</span><a href="#produkty">Produkty</a><a href="#pronajem">Pronájem</a><a href="#dlouhodoby-pronajem">Dlouhodobě</a></div><div><span>Informace</span><a href="#realizace">Využití</a><a href="#faq">FAQ</a><a href="#poptavka">Poptávka</a></div><div><span>Kontakt</span><a href="#poptavka">Nezávazná poptávka</a><a href="#top">Zpět nahoru ↑</a></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Lumixia</span><span>LED • DIGITAL • EXPERIENCE</span></div></footer>
-
+  <footer class="site-footer dark">
+    <div class="container">
+      <div class="footer-top"><p>Pronájem LED posterů a obrazovek.<br />Váš obsah si zaslouží být vidět.</p><nav class="footer-links" aria-label="Navigace v zápatí"><a href="#produkty">Technika</a><a href="#pronajem">Pronájem</a><a href="#dlouhodoby-pronajem">Dlouhodobě</a><a href="#faq">FAQ</a><a href="#top">Nahoru ↑</a></nav></div>
+      <img class="footer-wordmark" src="assets/lumixia-logo.png" alt="Lumixia" loading="lazy" />
+      <div class="footer-bottom"><span>© <span id="year"></span> Lumixia</span><span>LED POSTERY / INTERIÉRY / P1.86</span></div>
+    </div>
+  </footer>
   <script src="script.js"></script>
   <script src="pixel-guide.js" defer></script>
   <script src="hero-video.js" defer></script>
