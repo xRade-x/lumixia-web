@@ -73,7 +73,10 @@
 .hero-badge strong { font-size: 14px; }
 .hero-badge small { font-size: 12px; }
 .led-replay { font-size: 14px; }
-.section-light .section-heading h2 em { background-image: linear-gradient(105deg, #375a86, #5a4b94); }
+.section-light h2 em, .faq-section h2 em {
+  color: #43558c; background: none; -webkit-text-fill-color: currentColor;
+}
+.section-light h2, .faq-section h2 { line-height: 1.05; }
 .equipment-gallery { display: grid; grid-template-columns: 1.16fr .84fr; gap: 24px;
   margin: 0 0 60px; scroll-margin-top: 110px; }
 .equipment-shot { margin: 0; min-width: 0; border: 1px solid rgba(255,255,255,.13);
@@ -105,4 +108,56 @@
   .equipment-gallery { gap: 24px; margin-bottom: 40px; }
   .hero-badge { right: 0; bottom: -42px; }
   .led-replay { bottom: 30px; }
+}
+
+/* Úvod představuje skutečný formát sestavy namísto dekorativního monitoru. */
+.hero-visual { display: block; min-height: 0; padding: 0; }
+.hero-product { margin: 0; animation: hero-product-in .8s ease-out both; }
+.hero-product img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2;
+  object-fit: contain; border-radius: 24px; }
+.hero-product figcaption { display: flex; flex-wrap: wrap; justify-content: space-between;
+  gap: 8px 20px; padding: 18px 4px 0; font-size: 14px; }
+.hero-product figcaption strong { color: #d8f8ff; }
+.hero-product figcaption span { color: #adbbce; }
+@keyframes hero-product-in { from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .hero-product { animation: none; } }
+
+/* Srovnání rozteče pixelů a orientační pohledové vzdálenosti. */
+.pixel-guide { background: #0b1728; color: #f2f7ff; border: 1px solid #24394e;
+  border-radius: 26px; padding: 30px; box-shadow: var(--shadow); min-width: 0; }
+.pixel-guide>h3 { font: 800 32px/1.1 Manrope, sans-serif; letter-spacing: -.04em; margin: 18px 0; }
+.pixel-guide>p { color: #b2bfd1; font-size: 16px; line-height: 1.6; }
+.pixel-options { display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px; margin: 24px 0; padding: 0; border: 0; min-width: 0; }
+.pixel-options legend { color: #c5d1e1; font-size: 14px; margin-bottom: 12px; }
+.pixel-option { position: relative; display: flex; flex-direction: column; align-items: center;
+  gap: 5px; min-width: 0; padding: 12px 5px; border: 1px solid #34445c; border-radius: 12px;
+  cursor: pointer; background: #08111f; }
+.pixel-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.pixel-option:has(input:checked) { border-color: #82e8ff; background: #10293b;
+  box-shadow: inset 0 0 0 1px #82e8ff; }
+.pixel-option:has(input:focus-visible) { outline: 3px solid #a58bff; outline-offset: 4px; }
+.pixel-option svg { display: block; width: 100%; height: auto; }
+.pixel-option strong { font-size: 16px; }
+.pixel-option>span { font-size: 12px; text-align: center; color: #b5c5d9; }
+.pixel-result { padding-top: 20px; border-top: 1px solid #304156; }
+.pixel-result>span { display: block; font-size: 14px; color: #b6c5d8; }
+.pixel-result>div { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-top: 8px; }
+.pixel-result strong { font: 800 38px/1.1 Manrope, sans-serif; color: #d9f8ff; letter-spacing: -.04em; }
+.pixel-result>div>span { font-size: 14px; color: #aabdd5; }
+.distance-diagram { margin-top: 18px; padding-top: 20px; position: relative; }
+.distance-screen { font-size: 12px; color: #b5c5d9; }
+.distance-axis { height: 2px; margin: 14px 0; position: relative; background: #38475c; }
+.distance-axis::before { content: ''; position: absolute; left: 0; top: -12px; height: 26px; width: 5px; background: #82e8ff; border-radius: 2px; }
+.distance-span { position: relative; height: 2px; background: #82e8ff; }
+.distance-span::after { content: ''; position: absolute; right: -5px; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: #82e8ff; }
+.distance-span>span { position: absolute; right: -17px; bottom: 10px; color: #d9f8ff; font-size: 12px; }
+.distance-ticks { display: flex; justify-content: space-between; color: #9fb2ca; font-size: 12px; }
+.pixel-guide>.pixel-note { font-size: 13px; margin: 22px 0 8px; color: #a9bbd0; }
+.pixel-source { color: #b8eefe; font-size: 13px; text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .pixel-guide { padding: 24px 20px; }
+  .pixel-guide>h3 { font-size: 30px; }
+  .pixel-options { gap: 7px; }
 }

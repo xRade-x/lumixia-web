@@ -9,7 +9,7 @@ Napište požadovanou změnu v úkolu Lumixia v Codexu. Úprava se provede ve zd
 - `index.html` — texty, sekce, navigace a formulář.
 - `styles.css` — barvy, rozložení a mobilní zobrazení.
 - `script.js` — menu, výběr produktu a ukázkový formulář.
-- `led-display.js` — animovaná bodová LED matice v úvodu.
+- `pixel-guide.js` — interaktivní srovnání rozteče pixelů a komfortní vzdálenosti.
 - `assets/lumixia-logo.png` — logo s názvem.
 - `assets/lumixia-mark.png` — značka / ikona webu.
 
@@ -50,10 +50,14 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 
 `npm run check` ověří syntaxi skriptů. Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Původní vzhled, LED vizualizace, produkty, krátkodobý i dlouhodobý pronájem, využití a FAQ zůstávají zachovány.
 
-## Fotografie a LED animace
+## Fotografie a srovnání pixelů
 
-Úvodní LED panel vykresluje nadpis skutečnou maticí světelných bodů. Jedna sekvence trvá 11 sekund: rozsvícení nadpisu, přechod do fotografie LED stěny a návrat k nadpisu. Tlačítko umožňuje animaci zastavit nebo zopakovat. Mimo viditelnou část stránky a při skrytí okna se animace zastaví. Při nastavení omezeného pohybu zůstává úvod statický.
+Úvod zobrazuje sestavu pěti LED posterů s jedním souvislým obrazem, bez umělých dělicích čar. Stejná vizualizace se používá v produktové kartě. Původní animovaný model monitoru byl na přání uživatele nahrazen fotografickým vizuálem; úvod má jen krátké objevení respektující omezený pohyb.
 
-Produktové karty nyní používají studiové vizualizace vytvořené z fotografií dodaných uživatelem. Pod nimi jsou v sekci využití dva původní snímky skutečné techniky. Vizualizace jsou označené; drobné proporce a konstrukční detaily mohou být generativní retuší změněné. Původ a úpravy popisuje `assets/SOURCES.md`.
+Produktové vizualizace vycházejí z fotografií uživatele. Galerie obsahuje původní snímek propojené sestavy a upravenou fotografii tří posterů v showroomovém prostředí. Úprava prostředí je označená. Podrobnosti jsou v `assets/SOURCES.md`.
 
-Nabídka odpovídá potvrzeným interiérovým LED posterům P1.86: samostatné použití nebo sestava pěti kusů se společným obrazem 16:9. Produktové odkazy předvyplní odpovídající volbu ve formuláři. Studiové obrázky jsou uložené v úsporném WebP, původní fotografie zůstávají nezměněné. Další fotografie lze přidávat do `assets/` a sekce `#fotografie`.
+Nabídka odpovídá interiérovým LED posterům P1.86: samostatně nebo pět kusů se společným obrazem 16:9. P2.5 a P3.9 v grafice slouží pouze ke srovnání, nikoliv jako nabídka další techniky.
+
+Srovnání pixelů v sekci dlouhodobého pronájmu používá stejný schematický motiv při třech roztečích. Nativní přepínače fungují i z klávesnice. Skript aktualizuje orientační komfortní vzdálenost a polohu diváka na stupnici 0–8 m. Použitý přepočet je rozteč v mm × 1,72 = vzdálenost v metrech; jde o aproximaci tabulky Average Comfortable Viewing Distance od Planar, nikoliv o minimální vzdálenost či hranici rozlišení jednotlivých pixelů. Zaokrouhlené hodnoty jsou 3,2 / 4,3 / 6,7 m. Zdroj je odkazován přímo v grafice.
+
+Všechny nadpisy na světlém pozadí používají tmavou akcentní barvu #43558c namísto světlého přechodu určeného pro tmavé sekce.
