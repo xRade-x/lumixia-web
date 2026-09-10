@@ -58,8 +58,12 @@
         </div>
         <div class="hero-visual">
           <figure class="hero-product">
-            <img src="assets/lumixia-led-wall-seamless.webp" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Studiová vizualizace pěti spojených LED posterů Lumixia na kolečkách, přehrávajících jeden souvislý obraz" />
+            <video id="heroVideo" width="1536" height="1024" poster="assets/lumixia-led-wall-animation-poster.webp" preload="metadata" muted loop playsinline controls aria-label="Animace loga Lumixia na společné obrazové ploše pěti spojených LED posterů">
+              <source src="assets/lumixia-led-wall-animation.mp4" type="video/mp4" />
+              <a href="assets/lumixia-led-wall-animation.mp4">Přehrát animaci na LED posterech</a>
+            </video>
             <figcaption><strong>5× LED Poster P1.86</strong><span>Jeden souvislý obraz 16:9</span></figcaption>
+            <button class="hero-video-toggle" type="button" aria-controls="heroVideo" hidden>Přehrát animaci</button>
           </figure>
         </div>
       </div>
@@ -193,5 +197,6 @@
 
   <script src="script.js"></script>
   <script src="pixel-guide.js" defer></script>
+  <script src="hero-video.js" defer></script>
 </body>
 </html>

@@ -113,12 +113,17 @@
 /* Úvod představuje skutečný formát sestavy namísto dekorativního monitoru. */
 .hero-visual { display: block; min-height: 0; padding: 0; }
 .hero-product { margin: 0; animation: hero-product-in .8s ease-out both; }
-.hero-product img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2;
+.hero-product img, .hero-product video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2;
   object-fit: contain; border-radius: 24px; }
 .hero-product figcaption { display: flex; flex-wrap: wrap; justify-content: space-between;
   gap: 8px 20px; padding: 18px 4px 0; font-size: 14px; }
 .hero-product figcaption strong { color: #d8f8ff; }
 .hero-product figcaption span { color: #adbbce; }
+.hero-video-toggle { margin: 14px 4px 0; padding: 10px 16px; min-height: 44px;
+  border: 1px solid #38536b; border-radius: 999px; background: #0c1b2d;
+  color: #d8f8ff; cursor: pointer; font: 600 13px Inter, sans-serif; }
+.hero-video-toggle:hover { border-color: #82e8ff; }
+.hero-video-toggle:focus-visible { outline: 2px solid #82e8ff; outline-offset: 4px; }
 @keyframes hero-product-in { from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .hero-product { animation: none; } }
