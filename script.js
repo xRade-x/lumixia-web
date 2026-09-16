@@ -39,21 +39,74 @@ document.querySelectorAll('[data-occasion]').forEach(link => {
 });
 
 const success = document.querySelector('#formSuccess');
+// Remove only the obsolete prototype's saved inquiry; new inquiries stay in memory.
+try { localStorage.removeItem('lumixia:lastInquiry'); } catch (_) { /* Storage may be disabled. */ }
 if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = Object.fromEntries(new FormData(form).entries());
-    data.createdAt = new Date().toISOString();
+  const submit = form.querySelector('button[type="submit"]');
+  const live = document.documentElement.dataset.siteMode === 'production';
+  let token = '';
+  let tokenPromise;
+  let pending = false;
+  const showStatus = (text, state) => {
     success.hidden = false;
-    try {
-      localStorage.setItem('lumixia:lastInquiry', JSON.stringify(data));
-      success.textContent = '✓ Poptávka je uložená pouze v tomto prohlížeči. Nikam se neodeslala.';
-      form.reset();
-    } catch (_) {
-      success.textContent = 'Poptávku se nepodařilo uložit. Zadané údaje zůstávají ve formuláři; nic se neodeslalo.';
+    success.dataset.state = state;
+    success.textContent = text;
+    success.focus({ preventScroll: true });
+  };
+  const prepareToken = async () => {
+    if (!live || token) return;
+    if (!tokenPromise) tokenPromise = (async () => {
+      const response = await fetch(form.action, { credentials: 'omit', cache: 'no-store', headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(12000) });
+      const data = await response.json();
+      if (!response.ok || typeof data.token !== 'string') throw new Error('unavailable');
+      token = data.token;
+    })().finally(() => { tokenPromise = undefined; });
+    return tokenPromise;
+  };
+  submit.disabled = false;
+  if (!live) submit.textContent = 'Vyzkoušet formulář';
+  form.addEventListener('focusin', () => { prepareToken().catch(() => {}); });
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (pending || !form.reportValidity()) return;
+    if (!live) {
+      showStatus('Toto je náhled před spuštěním. Poptávka se neodeslala a údaje se neukládají.', 'info');
+      return;
     }
-    success.scrollIntoView({behavior:'smooth', block:'center'});
+    pending = true;
+    submit.disabled = true;
+    submit.textContent = 'Odesíláme…';
+    let sending = false;
+    try {
+      await prepareToken();
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.token = token;
+      sending = true;
+      const response = await fetch(form.action, {
+        method: 'POST', credentials: 'omit', cache: 'no-store',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data), signal: AbortSignal.timeout(30000)
+      });
+      const result = await response.json();
+      token = '';
+      if (!response.ok || result.ok !== true) {
+        showStatus(result.message || 'Poptávku se nepodařilo odeslat. Napište nám prosím e-mailem.', 'error');
+      } else {
+        form.reset();
+        showStatus('Děkujeme. Poptávka byla předána našemu poštovnímu serveru. Ozveme se vám na uvedený e-mail.', 'success');
+      }
+    } catch (_) {
+      token = '';
+      showStatus(sending
+        ? 'Nepodařilo se potvrdit doručení. Údaje zůstaly ve formuláři. Než poptávku odešlete znovu, ověřte ji u nás na poptavky@lumixia.cz.'
+        : 'Formulář se nyní nemůže připojit. Zkuste to později nebo napište na poptavky@lumixia.cz. Údaje zůstaly ve formuláři.', 'error');
+    } finally {
+      pending = false;
+      submit.disabled = false;
+      submit.textContent = 'Odeslat nezávaznou poptávku';
+    }
   });
 }
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();

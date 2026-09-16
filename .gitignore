@@ -5,3 +5,7 @@ dist/
 .env.*
 !.env.example
 *.log
+release-wedos/
+server/config.php
+server/runtime/
+lumixia-private/

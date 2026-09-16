@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const publicFiles = new Set(['index.html', 'styles.css', 'script.js', 'pixel-guide.js', 'hero-video.js']);
+const publicFiles = new Set(['index.html', 'soukromi.html', 'cookies.html', '404.html', 'robots.txt', 'styles.css', 'script.js', 'pixel-guide.js', 'hero-video.js']);
 const mime = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.png': 'image/png',

@@ -1,0 +1,30 @@
+# Install in the document root only after the HTTPS certificate is active.
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+LimitRequestBody 16384
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+# Keep certificate issuance/renewal reachable.
+RewriteRule ^\.well-known/acme-challenge/ - [L]
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule ^(?:server|scripts|tests|node_modules|lumixia-private)(?:/|$) - [F,L,NC]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^lumixia\.cz$ [NC]
+RewriteRule ^ https://lumixia.cz%{REQUEST_URI} [R=301,L,NE]
+
+<FilesMatch "(?i)(^\.|\.(?:ini|log|sql|bak|old|env|lock|md|mjs|map)$)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), browsing-topics=()"
+  Header always set Strict-Transport-Security "max-age=15552000" "expr=%{HTTPS} == 'on'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' INLINE_SCRIPT_HASHES; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+  <FilesMatch "\.(?:html|css|js|webp|png|jpe?g|mp4|woff2|xml|txt)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

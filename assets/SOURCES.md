@@ -41,3 +41,7 @@ Tři schematické náhledy používají stejnou velikost motivu a rozteče bodů
 ## Zadání čelní sestavy
 
 Vestavěný image_gen: ze schválené grafiky Instagramu 03/05 připravit čistý studiový podklad 1536 × 1024, zachovat pět stejných úzkých posterů, čelní pohled, stejnou výšku všech podstavců a souvislý obraz bez dělicích čar. Odstranit okolní texty a ponechat modrofialovou vlnu. Následně cíleně zúžit sestavu při zachování výšky; zdrojem je uživatelem upřesněný formát 16:9. Finální soubor je výše uvedený WebP. Logo se přehrává z původního MP4 pomocí FFmpeg.
+
+
+## Lokální písma (16. 9. 2026)
+Barlow Condensed 600/700 a Inter 400/500/600/700 z oficiálního Google Fonts CSS API. Převedena beze změny glyfů do WOFF2, včetně českých znaků. Obě rodiny pod SIL Open Font License; texty licencí jsou v assets/fonts. Web nepoužívá vzdálené Google Fonts.

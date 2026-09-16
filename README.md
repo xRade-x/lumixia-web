@@ -4,32 +4,23 @@ Prezentační web pro pronájem LED obrazovek a LED posterů. Navazuje na původ
 
 ## Průběžné úpravy
 
-Napište požadovanou změnu v úkolu Lumixia v Codexu. Úprava se provede ve zdrojových souborech, ověří a nahraje do větve `main`. Po dokončení nasazení stačí obnovit stejnou webovou adresu.
+Napište požadovanou změnu v úkolu Lumixia v Codexu. Úprava se provede ve zdrojových souborech, ověří a uloží do Gitu. Po dokončení nasazení na příslušný hosting stačí obnovit stejnou webovou adresu.
 
 - `index.html` — texty, sekce, navigace a formulář.
 - `styles.css` — barvy, rozložení a mobilní zobrazení.
-- `script.js` — menu, výběr produktu a ukázkový formulář.
+- `script.js` — menu, výběr produktu a poptávkový formulář.
 - `pixel-guide.js` — interaktivní srovnání rozteče pixelů a komfortní vzdálenosti.
 - `hero-video.js` — přehrávání animace na posterech, pozastavení mimo záběr a respektování omezeného pohybu.
 - `assets/lumixia-logo.png` — logo s názvem.
 - `assets/lumixia-mark.png` — značka / ikona webu.
 
-Čisté HTML/CSS/JS bez programových závislostí. Není potřeba instalace balíčků. Písma Inter a Barlow Condensed se načítají z Google Fonts; při nedostupnosti se použije systémové písmo.
+Čisté HTML/CSS/JS bez programových závislostí. Není potřeba instalace balíčků. Písma Inter a Barlow Condensed jsou součástí assets/fonts, včetně českých znaků a licencí. Na Google se návštěvník při načtení webu nepřipojuje.
 
-## GitHub Pages: automatické zveřejnění změn
+## Veřejné spuštění
 
-Jednorázové zapnutí:
+Cílová doména je **https://lumixia.cz**, webhosting WEDOS / VEDOS, pošta Seznam Email Profi. Kompletní postup a nezbytné kontroly jsou v [SPUSTENI.md](SPUSTENI.md). `npm run build:wedos` připraví `release-wedos/www` a neveřejnou složku `release-wedos/lumixia-private`. Výstup není uložený v Gitu a neobsahuje žádné skutečné heslo.
 
-1. Otevřete [Settings → Pages](https://github.com/xRade-x/lumixia-web/settings/pages).
-2. V **Build and deployment → Source** vyberte **Deploy from a branch**.
-3. Vyberte **main**, složku **/ (root)** a klikněte na **Save**.
-4. Vyčkejte na dokončení nasazení v záložce **Actions**.
-
-Po aktivaci bude web na **https://xrade-x.github.io/lumixia-web/**.
-
-Každá změna nahraná do `main` se následně publikuje automaticky. Aktualizace může několik minut trvat. Soubor `.nojekyll` umožňuje publikování statických souborů bez Jekyllu.
-
-[Oficiální návod GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+GitHub uchovává zdrojové verze. Samotné nahrání do větve main zatím **nenasazuje WEDOS**; po zřízení hostingu se připravený výstup nahraje přes FTPS. Existující Sites slouží jako samostatný soukromý náhled. GitHub Pages PHP formulář nespustí.
 
 ## Místní náhled
 
@@ -39,17 +30,17 @@ Pro rychlé prohlédnutí lze otevřít `index.html` přímo v prohlížeči.
 
 ## Náhled Sites
 
-Konfigurace `.openai/hosting.json` patří stávajícímu náhledu v Codex Sites. `npm run build` zkopíruje aktuální web do `dist` pro publikování přes Sites. Ve složce `dist` nic ručně neupravujte; zdrojem jsou vždy soubory v kořeni. Nasazení Sites se aktualizuje samostatně. Automatické zveřejnění změn z GitHubu zajišťuje GitHub Pages po jeho zapnutí.
+Konfigurace `.openai/hosting.json` patří stávajícímu náhledu v Codex Sites. `npm run build` zkopíruje aktuální web do `dist` pro publikování přes Sites. Ve složce `dist` nic ručně neupravujte; zdrojem jsou vždy soubory v kořeni. Nasazení Sites se aktualizuje samostatně. Náhled obsahuje noindex a neodesílá poptávky. Serverový kód ani konfigurace se do dist nekopírují.
 
 ## Poptávkový formulář
 
-Formulář je zatím **ukázkový**. Nic neposílá na e-mail, server ani do CRM a nepočítá cenu. Poslední záznam ukládá pouze v tomto prohlížeči pod klíčem `lumixia:lastInquiry`. Stránka tuto skutečnost uvádí před potvrzením i po něm.
+Ve veřejném WEDOS výstupu se odesílá přes `api/poptavka.php` a PHPMailer 7.1.1 na **poptavky@lumixia.cz**. TLS připojení na smtp.seznam.cz:465 ověřuje certifikát. Přihlášení a HMAC tajemství jsou pouze v neveřejném config.php. Bez aktivní konfigurace formulář selže bezpečně.
 
-Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolenou službu pro odesílání. Tajné klíče nepatří do HTML ani do veřejného repozitáře.
+Token, origin a typ obsahu se ověřují na serveru; příjemce je pevný a zákazník se používá pouze jako Reply-To. Zprávy jsou prostý text, bez příloh a automatických kopií. Žádná osobní data se neukládají do prohlížeče. Starý zkušební záznam `lumixia:lastInquiry` se odstraní. Ochranné limity a pravidla údržby uvádí SPUSTENI.md.
 
 ## Kontrola před zveřejněním
 
-`npm run check` ověří syntaxi skriptů. Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Zachovejte video v úvodu, výběr produktu do formuláře, srovnání pixelů, krátkodobý i dlouhodobý pronájem a FAQ.
+`npm run check` ověří syntaxi a 5 testů chování formuláře. `php tests/inquiry.test.php` provede 37 kontrol backendu bez skutečného odeslání pošty (PHP 8.4/8.5). Zachovejte relativní cesty k souborům, aby fungoval i web na `/lumixia-web/`. Zachovejte video v úvodu, výběr produktu do formuláře, srovnání pixelů, krátkodobý i dlouhodobý pronájem a FAQ.
 
 ## Fotografie a srovnání pixelů
 
@@ -69,6 +60,6 @@ Hlavní text na světlé ploše používá #08131f, vedlejší #54616b; na tmav�
 
 ## Zaměření na firemní akce
 
-Úvod začíná srozumitelným nadpisem „Pronájem LED posterů pro firemní akce“. Světlý prostor pro hlavní nabídku doplňuje tmavá fotografie s animací. Namísto samotného velkého sloganu a technických parametrů následují tři konkrétní firemní scénáře: veletrhy, konference / eventy a showroomy / recepce. Sport je vedlejší využití a svatba je pouze krátce zmíněna. Největší fotografie v galerii ukazuje reklamní obsah.
+Úvod začíná srozumitelným nadpisem „Pronájem LED obrazovek pro firemní akce“. Světlý prostor pro hlavní nabídku doplňuje tmavá fotografie s animací. Namísto samotného velkého sloganu a technických parametrů následují tři konkrétní firemní scénáře: veletrhy, konference / eventy a showroomy / recepce. Sport je vedlejší využití a svatba je pouze krátce zmíněna. Největší fotografie v galerii ukazuje reklamní obsah.
 
-Odkazy u scénářů předvyplní nové pole využití v existující poptávce. Výchozí volba techniky nechává návštěvníka požádat o radu. Formulář nadále zůstává ukázkový a nic neodesílá.
+Odkazy u scénářů předvyplní nové pole využití v existující poptávce. Výchozí volba techniky nechává návštěvníka požádat o radu. V náhledu formulář nic neodesílá; veřejný WEDOS výstup obsahuje připravený PHP backend.
