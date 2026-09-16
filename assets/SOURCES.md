@@ -1,6 +1,6 @@
 # Fotografie a vizualizace Lumixia
 
-Aktualizováno 10. září 2026. Fotografie dodal uživatel v konverzaci „Tvorba webových stránek“ a požádal o úpravu pro web.
+Aktualizováno 16. září 2026. Fotografie dodal uživatel v konverzaci „Tvorba webových stránek“ a požádal o úpravu pro web.
 
 ## Původní snímek
 
@@ -16,7 +16,16 @@ Aktualizováno 10. září 2026. Fotografie dodal uživatel v konverzaci „Tvor
 
 Loga `lumixia-logo.png` a `lumixia-mark.png` dodal uživatel a zůstávají beze změny.
 
-## Animace na společné obrazové ploše
+## Aktuální animace spojení pěti posterů
+
+- `lumixia-posters-join.mp4` — 20 sekund, 1536 × 1024 px, 24 snímků/s, H.264 bez zvuku s hlavičkou na začátku souboru. Pět stejných rastrových modulů se samostatnými logy se posune k sobě a přejde na jednu nepřerušenou obrazovou plochu. Po společném logu se moduly opět oddělí. Pohyb nemění rozměry ani výšku podstavců.
+- `lumixia-posters-join-poster.webp` — snímek v čase 2 s pro načítání a omezený pohyb.
+
+Vestavěný image_gen připravil z předchozí čelní sestavy izolovaný modul a prázdné studiové pozadí. Ve video kompozici je prázdná obrazová plocha upravena na proporce sestavy; podstavec a kolečka se škálují společně bez změny svého poměru stran. Jde o názornou produktovou vizualizaci, nikoli rozměrový podklad. Všech pět kusů používá stejnou texturu a geometrii. Logo je původní uživatelovo video, oříznuté na 720 × 1040 px a vložené bez deformace. Video bylo složeno offline z rastrových podkladů a zakódováno pomocí FFmpeg; jeho přehrávání nevyžaduje vykreslování celé scény v prohlížeči.
+
+Zadání image_gen: z čelní studiové fotografie izolovat jeden úzký poster s černým displejem na průhledné pozadí, zachovat čelní pohled a nízký podstavec s kolečky. Druhým podkladem je stejná prázdná tmavě modrá scéna s osvětlenou podlahou, bez obrazovek. Originály podkladů, úplné prompty a kompoziční skript zůstávají ve složkách `work/hero-join-assets` a `work/hero-join-render` mimo publikovaný web.
+
+## Předchozí animace na společné obrazové ploše
 
 - `lumixia-led-wall-animation.mp4` — uživatelovo video `LOGO ANIMACE_LEDPOSTER.mp4` vložené bez perspektivního zkreslení na aktivní displej čelní vizualizace `lumixia-led-wall-seamless.webp`. Animuje se jeden společný obraz; rám, podstavce a studiové pozadí zůstávají statické. Z portrétního zdroje je použit středový výřez 720 × 960 px, zmenšený při zachování proporcí a vložený do černého obsahu 16:9, s drobným svislým okrajem pro usazení do vizualizace. Logo není deformováno. Výsledná kompozice má 1536 × 1024 px, 24 snímků/s a délku 10 sekund. MP4/H.264 s hlavičkou na začátku souboru, bez zvukové stopy pro tichou smyčku v úvodu webu.
 - `lumixia-led-wall-animation-poster.webp` — náhled ze stejné kompozice v čase 8,8 s. Zobrazuje se před přehráním a při vypnutých animacích.
@@ -27,7 +36,7 @@ Video bylo sestaveno pomocí FFmpeg; logo ani samotná animace nebyly generativn
 
 Zdroj: [Planar — What is Pixel Pitch and Why Does It Matter?](https://www.planar.com/blog/2025/what-is-pixel-pitch-and-why-does-it-matter/), ověřeno 10. září 2026.
 
-Tři schematické náhledy používají stejnou velikost motivu a rozteče bodů v poměru 1,86 : 2,5 : 3,9. Nejde o skutečnou velikost LED na zařízení návštěvníka. Přepočet vzdálenosti rozteč × 1,72 vychází z publikované tabulky průměrné komfortní vzdálenosti; hodnoty pro P1.86 a P3.9 jsou interpolovaným odhadem. P2.5 a P3.9 jsou pouze srovnávací příklady. Volba konkrétního umístění závisí také na zraku a obsahu.
+Tři schematické náhledy používají stejnou velikost motivu a rozteče bodů v poměru 1,86 : 2,5 : 3,9. Nejde o skutečnou velikost LED na zařízení návštěvníka. U P1.86 platí od 16. září údaj „od 2,5 m“ dodaný uživatelem; nejde o výsledek výpočtu Planar. Pro srovnávací P2.5 a P3.9 zůstává přepočet rozteč × 1,72 vycházející z publikované tabulky průměrné komfortní vzdálenosti. P2.5 a P3.9 jsou pouze srovnávací příklady. Volba konkrétního umístění závisí také na zraku a obsahu.
 
 ## Zadání čelní sestavy
 

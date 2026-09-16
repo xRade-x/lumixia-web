@@ -1,5 +1,5 @@
-// Approximate comfortable distance: 1.72 m per mm of pitch, following
-// Planar's published table. This is not a minimum or visual-acuity distance.
+// Lumixia specifies viewing from 2.5 m for its P1.86 posters.
+// The other pitches retain approximate comparison distances.
 (() => {
   const guide = document.querySelector('#pixelGuide');
   if (!guide) return;
@@ -12,8 +12,9 @@
     const choice = choices.find(input => input.checked);
     const pitch = Number(choice?.value);
     if (!pitches.has(pitch)) return;
-    const meters = pitch * 1.72;
-    distance.textContent = `cca ${meters.toLocaleString('cs-CZ', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} m`;
+    const meters = pitch === 1.86 ? 2.5 : pitch * 1.72;
+    const prefix = pitch === 1.86 ? 'od' : 'cca';
+    distance.textContent = `${prefix} ${meters.toLocaleString('cs-CZ', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} m`;
     selected.textContent = `pro P${choice.value}`;
     span.style.width = `${Math.min(100, meters / 8 * 100)}%`;
   }

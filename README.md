@@ -53,13 +53,13 @@ Pro příjem skutečných poptávek je potřeba doplnit cílový e-mail a zvolen
 
 ## Fotografie a srovnání pixelů
 
-Úvod přehrává desetisekundovou animaci loga na společné obrazové ploše pěti posterů, vloženou do čelní studiové vizualizace. Všech pět posterů má stejný nízký podstavec a obraz neobsahuje dělicí čáry. Rám a podstavce zůstávají statické. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou, bez dělicích čar uvnitř obrazové plochy.
+Úvod přehrává dvacetisekundovou smyčku `assets/lumixia-posters-join.mp4`: pět samostatných posterů s animovaným logem se plynule sjede do jedné obrazovky, na které běží jedno velké společné logo. Potom se opět rozdělí. Každý poster používá stejný podklad, rozměry a výšku podstavce; společný obraz neobsahuje dělicí čáry. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou.
 
 Produktové vizualizace vycházejí z fotografií uživatele. Galerie obsahuje původní snímek propojené sestavy a upravenou fotografii tří posterů v showroomovém prostředí. Úprava prostředí je označená. Podrobnosti jsou v `assets/SOURCES.md`.
 
 Nabídka odpovídá interiérovým LED posterům P1.86: samostatně nebo pět kusů se společným obrazem 16:9. P2.5 a P3.9 v grafice slouží pouze ke srovnání, nikoliv jako nabídka další techniky.
 
-Srovnání pixelů v samostatné sekci technologie používá stejný schematický motiv při třech roztečích. Nativní přepínače fungují i z klávesnice. Skript aktualizuje orientační komfortní vzdálenost a polohu diváka na stupnici 0–8 m. Použitý přepočet je rozteč v mm × 1,72 = vzdálenost v metrech; jde o aproximaci tabulky Average Comfortable Viewing Distance od Planar, nikoliv o minimální vzdálenost či hranici rozlišení jednotlivých pixelů. Zaokrouhlené hodnoty jsou 3,2 / 4,3 / 6,7 m. Zdroj je odkazován přímo v grafice.
+Srovnání pixelů v samostatné sekci technologie používá stejný schematický motiv při třech roztečích. Nativní přepínače fungují i z klávesnice. Skript aktualizuje vzdálenost a polohu diváka na stupnici 0–8 m. Pro P1.86 se podle zadání Lumixia zobrazuje „od 2,5 m“. Srovnávací hodnoty P2.5 / P3.9 zůstávají přibližně 4,3 / 6,7 m. Odkaz na Planar byl na žádost uživatele z grafiky odstraněn; výchozí odborný podklad pro srovnávací hodnoty zůstává v `assets/SOURCES.md`.
 
 ## Výtvarný směr
 
