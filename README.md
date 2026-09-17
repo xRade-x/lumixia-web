@@ -54,7 +54,7 @@ Srovnání pixelů v samostatné sekci technologie používá stejný schematick
 
 ## Výtvarný směr
 
-Redesign z 10. září 2026 používá plakátovou typografii Barlow Condensed, velkou animovanou sestavu v úvodu, nestejně široké produktové sloupce a posunuté fotografie. Rovné hrany, jednoduché linky a jeden souvislý tyrkysový blok pronájmu nahrazují obalové karty, přechody a dekorativní efekty. Barvy a typografie jsou v proměnných na začátku `styles.css`.
+Redesign z 10. září 2026 používá plakátovou typografii Barlow Condensed, velkou animovanou sestavu v úvodu, nestejně široké produktové sloupce zarovnané do stejné výšky a posunuté fotografie v galerii. Rovné hrany, jednoduché linky a jeden souvislý tyrkysový blok pronájmu nahrazují obalové karty, přechody a dekorativní efekty. Barvy a typografie jsou v proměnných na začátku `styles.css`.
 
 Hlavní text na světlé ploše používá #08131f, vedlejší #54616b; na tmavé ploše #f2f4f5 a #b7c8d6. Základní textové kombinace mají kontrast alespoň 5,7 : 1. Pořadí sekcí: přímá nabídka pronájmu pro firmy → firemní využití → výběr obrazovky → fotografie → průběh pronájmu → technologie a pixely → FAQ → poptávka. Původní provedení je dostupné v historii Git.
 
