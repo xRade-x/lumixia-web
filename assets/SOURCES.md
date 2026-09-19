@@ -45,3 +45,8 @@ Vestavěný image_gen: ze schválené grafiky Instagramu 03/05 připravit čist�
 
 ## Lokální písma (16. 9. 2026)
 Barlow Condensed 600/700 a Inter 400/500/600/700 z oficiálního Google Fonts CSS API. Převedena beze změny glyfů do WOFF2, včetně českých znaků. Obě rodiny pod SIL Open Font License; texty licencí jsou v assets/fonts. Web nepoužívá vzdálené Google Fonts.
+
+
+## Aktualizace úvodní animace 19. 9. 2026
+
+`lumixia-posters-v2.mp4` a `lumixia-posters-v2-poster.webp` používají nové dodané animace Lumixia v2 pro samostatný poster a pět spojených posterů. Původní pohyb spojování a raster identických modulů zůstávají zachovány. Kompozice vznikla offline z obou skutečných MP4; obraz se nevygenerovával znovu. Specifikace, zdrojové kontrolní součty a postup jsou v `media/hero/README.md`.

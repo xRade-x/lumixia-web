@@ -14,3 +14,14 @@ Provedené kontroly:
 Zbývá na skutečném hostingu: pořízení domény/hostingu, zřízení Email Profi, DNS, HTTPS, zapnutí a kontrola bezpečnostních hlaviček, ověření dostupnosti souborů a PHP, skutečné doručení a odpověď na testovací poptávku, kontrola mobilního zobrazení, ověření vlastnictví v Search Console a odeslání sitemapy. Podrobný postup je v SPUSTENI.md.
 
 Jde o ověření implementace, nikoli o nezávislý penetrační test nebo záruku absolutního zabezpečení. Průběžná aktualizace, zálohy a kontrola doručování zůstávají součástí provozu.
+
+
+## Úvodní animace – 19. 9. 2026
+
+- Nové dodané logo v2 pro jeden poster i pět spojených posterů zapracováno do stejné scény.
+- MP4 H.264 yuv420p, 1536 × 1024 px, 24 fps, 32 sekund, bez zvuku. Dekódováno všech 768 snímků bez chyby.
+- MP4 má metadata před obrazovými daty (faststart). Oba exporty webu obsahují totožné finální video a platné odkazy.
+- Ověřeny samostatné postery, fáze spojení a společný obraz. Všech pět používá totožný podstavec a společnou spodní hranu.
+- Poměr ploch 1:3 a 5:3 odpovídá zdrojům, bez ořezu a deformace loga. Texty s dřívějším 16:9 opraveny.
+- Vykreslený stav v čase 0 a 32 s je shodný; průměrný rozdíl posledního a prvního snímku je 0,68/255.
+- Přehrávání, pauza, reakce na omezený pohyb a zastavování mimo záběr zůstaly beze změny.

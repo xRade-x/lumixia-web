@@ -44,11 +44,11 @@ Token, origin a typ obsahu se ověřují na serveru; příjemce je pevný a zák
 
 ## Fotografie a srovnání pixelů
 
-Úvod přehrává dvacetisekundovou smyčku `assets/lumixia-posters-join.mp4`: pět samostatných posterů s animovaným logem se plynule sjede do jedné obrazovky, na které běží jedno velké společné logo. Potom se opět rozdělí. Každý poster používá stejný podklad, rozměry a výšku podstavce; společný obraz neobsahuje dělicí čáry. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou.
+Úvod přehrává 32sekundovou smyčku `assets/lumixia-posters-v2.mp4`: pět samostatných posterů s animovaným logem se plynule sjede do jedné obrazovky, na které běží jedno velké společné logo. Potom se opět rozdělí. Obraz na samostatných posterech přehrává dodanou animaci loga v2 (344 × 1032 px), spojená plocha její širokou verzi (1720 × 1032 px); obě bez ořezu a deformace. Podrobnosti k obnově videa jsou v `media/hero/README.md`. Každý poster používá stejný podklad, rozměry a výšku podstavce; společný obraz neobsahuje dělicí čáry. Tichá smyčka se dá pozastavit; při omezeném pohybu se automaticky nespouští. V katalogu zůstává vizualizace s modrofialovou vlnou.
 
 Produktové vizualizace vycházejí z fotografií uživatele. Galerie obsahuje původní snímek propojené sestavy a upravenou fotografii tří posterů v showroomovém prostředí. Úprava prostředí je označená. Podrobnosti jsou v `assets/SOURCES.md`.
 
-Nabídka odpovídá interiérovým LED posterům P1.86: samostatně nebo pět kusů se společným obrazem 16:9. P2.5 a P3.9 v grafice slouží pouze ke srovnání, nikoliv jako nabídka další techniky.
+Nabídka odpovídá interiérovým LED posterům P1.86: samostatně nebo pět kusů se společným obrazem 1720 × 1032 px (5:3). P2.5 a P3.9 v grafice slouží pouze ke srovnání, nikoliv jako nabídka další techniky.
 
 Srovnání pixelů v samostatné sekci technologie používá stejný schematický motiv při třech roztečích. Nativní přepínače fungují i z klávesnice. Skript aktualizuje vzdálenost a polohu diváka na stupnici 0–8 m. Pro P1.86 se podle zadání Lumixia zobrazuje „od 2,5 m“. Srovnávací hodnoty P2.5 / P3.9 zůstávají přibližně 4,3 / 6,7 m. Odkaz na Planar byl na žádost uživatele z grafiky odstraněn; výchozí odborný podklad pro srovnávací hodnoty zůstává v `assets/SOURCES.md`.
 
