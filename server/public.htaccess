@@ -1,5 +1,6 @@
 # Install in the document root only after the HTTPS certificate is active.
-Options -Indexes -MultiViews
+# WEDOS permits only the Indexes option in .htaccess.
+Options -Indexes
 DirectoryIndex index.html
 LimitRequestBody 16384
 ErrorDocument 404 /404.html
