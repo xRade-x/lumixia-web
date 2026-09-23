@@ -43,16 +43,33 @@ const success = document.querySelector('#formSuccess');
 try { localStorage.removeItem('lumixia:lastInquiry'); } catch (_) { /* Storage may be disabled. */ }
 if (form) {
   const submit = form.querySelector('button[type="submit"]');
+  const fields = form.querySelector('#quoteFields');
+  const statusTitle = document.querySelector('#formStatusTitle');
+  const statusMessage = document.querySelector('#formStatusMessage');
+  const statusIcon = document.querySelector('#formStatusIcon');
+  const reset = document.querySelector('#formReset');
   const live = document.documentElement.dataset.siteMode === 'production';
   let token = '';
   let tokenPromise;
   let pending = false;
   const showStatus = (text, state) => {
+    const sent = state === 'success';
+    fields.hidden = sent;
     success.hidden = false;
     success.dataset.state = state;
-    success.textContent = text;
+    statusTitle.textContent = sent ? 'Poptávka je odeslaná.' : state === 'error' ? 'Odeslání se nepodařilo potvrdit.' : 'Toto je pouze náhled.';
+    statusIcon.textContent = sent ? '✓' : state === 'error' ? '!' : 'i';
+    statusMessage.textContent = text;
+    reset.hidden = !sent;
     success.focus({ preventScroll: true });
+    success.scrollIntoView({ block: 'center' });
   };
+  reset.addEventListener('click', () => {
+    success.hidden = true;
+    reset.hidden = true;
+    fields.hidden = false;
+    form.querySelector('#occasion').focus();
+  });
   const prepareToken = async () => {
     if (!live || token) return;
     if (!tokenPromise) tokenPromise = (async () => {
@@ -68,12 +85,13 @@ if (form) {
   form.addEventListener('focusin', () => { prepareToken().catch(() => {}); });
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (pending || !form.reportValidity()) return;
+    if (pending || fields.hidden || !form.reportValidity()) return;
     if (!live) {
       showStatus('Toto je náhled před spuštěním. Poptávka se neodeslala a údaje se neukládají.', 'info');
       return;
     }
     pending = true;
+    success.hidden = true;
     submit.disabled = true;
     submit.textContent = 'Odesíláme…';
     let sending = false;
@@ -93,7 +111,7 @@ if (form) {
         showStatus(result.message || 'Poptávku se nepodařilo odeslat. Napište nám prosím e-mailem.', 'error');
       } else {
         form.reset();
-        showStatus('Děkujeme. Poptávka byla předána našemu poštovnímu serveru. Ozveme se vám na uvedený e-mail.', 'success');
+        showStatus('Děkujeme za váš zájem. Ozveme se vám na uvedený e-mail a domluvíme podrobnosti vaší akce.', 'success');
       }
     } catch (_) {
       token = '';

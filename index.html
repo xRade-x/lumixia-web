@@ -11,7 +11,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" href="assets/lumixia-mark.png" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="styles.css?v=20260917-products" />
+  <link rel="stylesheet" href="styles.css?v=20260923-form-confirmation" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lumixia.cz/#organizace","name":"Lumixia","legalName":"Auto Odolka s.r.o.","identifier":"10952179","url":"https://lumixia.cz/","email":"poptavky@lumixia.cz","address":{"@type":"PostalAddress","streetAddress":"U Slovanky 1987/10","addressLocality":"Praha 8","postalCode":"182 00","addressCountry":"CZ"}},{"@type":"WebSite","@id":"https://lumixia.cz/#web","name":"Lumixia","url":"https://lumixia.cz/","inLanguage":"cs","publisher":{"@id":"https://lumixia.cz/#organizace"}},{"@type":"Service","name":"Pronájem LED obrazovek a LED posterů","serviceType":"Pronájem LED techniky pro firemní akce","provider":{"@id":"https://lumixia.cz/#organizace"},"url":"https://lumixia.cz/#produkty","description":"Interiérové LED postery P1.86, samostatně nebo propojené do jedné obrazovky. Pro veletrhy, konference, firemní eventy a showroomy."}]}</script>
 </head>
 <body>
@@ -184,6 +184,7 @@
         <div class="quote-grid">
           <div class="quote-intro"><h3>Stačí termín, místo a vaše představa.</h3><p>Veletrh, konference nebo firemní večírek? Napište, co chystáte a co chcete zobrazit. Techniku vybereme společně.</p><p class="contact-email"><a href="mailto:poptavky@lumixia.cz">poptavky@lumixia.cz</a></p><div class="demo-note" data-preview-only><strong>Náhled před spuštěním</strong>Formulář zatím neodesílá zprávy. Schránku i doménu připravujeme.</div></div>
 <form class="quote-form" id="quoteForm" action="/api/poptavka.php" method="post" aria-describedby="formPrivacy">
+          <div id="quoteFields">
           <div class="form-trap" aria-hidden="true"><label>Web společnosti<input name="website" tabindex="-1" autocomplete="off" /></label></div>
           <label>Na jakou akci?<select name="occasion" id="occasion"><option value="">Vyberte využití</option><option>Veletrh / výstavní stánek</option><option>Konference / firemní event</option><option>Showroom / recepce</option><option>Sportovní přenos</option><option>Jiné využití</option></select></label>
           <div class="form-row"><label>Co potřebujete?<select name="type" id="type"><option value="Nevím — potřebuji poradit">Nevím — nechám si poradit</option><option value="Pronájem sestavy 5× LED Poster">Pronájem sestavy 5× LED Poster</option><option value="Pronájem samostatného LED Posteru">Pronájem samostatného LED Posteru</option><option value="Dlouhodobý pronájem">Dlouhodobý pronájem</option></select></label><label>Počet posterů / sestav<input name="size" id="size" maxlength="120" placeholder="např. 2 postery / 1 sestava 5:3" /></label></div>
@@ -193,7 +194,11 @@
           <p class="form-privacy" id="formPrivacy">E-mail a údaje o akci použijeme k vyřízení poptávky. <a href="soukromi.html">Jak chráníme vaše údaje</a>.</p>
           <div class="form-bottom"><button class="btn btn-dark" type="submit" disabled>Odeslat nezávaznou poptávku <span aria-hidden="true">↗</span></button><small>Odesláním nevzniká objednávka. Konkrétní nabídku domluvíme společně.</small></div>
           <noscript><p>Pro formulář zapněte JavaScript, nebo nám napište na <a href="mailto:poptavky@lumixia.cz">poptavky@lumixia.cz</a>.</p></noscript>
-          <div class="form-success" id="formSuccess" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          </div>
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden>
+            <span class="form-status-icon" id="formStatusIcon" aria-hidden="true"></span>
+            <div class="form-status-copy"><h3 id="formStatusTitle"></h3><p id="formStatusMessage"></p><button class="text-link" id="formReset" type="button" hidden>Odeslat další poptávku <span aria-hidden="true">↗</span></button></div>
+          </div>
         </form>
         </div>
       </div>
@@ -208,7 +213,7 @@
       <div class="footer-bottom"><span>© <span id="year">2026</span> Lumixia</span><span>LED POSTERY / INTERIÉRY / P1.86</span></div>
     </div>
   </footer>
-  <script src="script.js?v=20260916-launch"></script>
+  <script src="script.js?v=20260923-form-confirmation"></script>
   <script src="pixel-guide.js" defer></script>
   <script src="hero-video.js" defer></script>
 </body>

@@ -65,3 +65,10 @@
 
 /* Keep product headings and images aligned when the two columns become narrower. */
 @media(min-width:761px) and (max-width:1000px){.product-heading{flex-direction:column;align-items:flex-start}}
+
+/* Keep the inquiry outcome visible, including below the mobile keyboard. */
+.quote-form .form-success{display:flex;align-items:flex-start;gap:22px;margin-top:24px;padding:28px;border:1px solid var(--cyan);background:#102d3a;color:var(--paper);scroll-margin-block:110px 32px}
+.quote-form .form-success[data-state="success"]{margin-top:0;padding:clamp(26px,4vw,48px);min-height:300px;background:var(--cyan);border-color:var(--cyan);color:var(--ink)}
+.form-status-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid currentColor;border-radius:50%;font-size:1.7rem;line-height:1;font-weight:700}
+.form-status-copy{min-width:0}.form-status-copy h3{margin:0 0 16px;font-family:var(--body);font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.15;letter-spacing:-.035em;color:inherit}.form-status-copy p{margin:0;line-height:1.65;color:inherit}.form-status-copy .text-link{margin-top:28px;background:none;color:inherit;border:0;border-bottom:1px solid currentColor;padding:8px 0;font-weight:600}.form-success:focus-visible{outline:3px solid var(--paper);outline-offset:5px}.quote-form .form-success[data-state="success"] .text-link:focus-visible{outline-color:var(--ink)}
+@media(max-width:480px){.quote-form .form-success{flex-direction:column;gap:18px;padding:24px}.quote-form .form-success[data-state="success"]{min-height:0}.form-status-copy h3{font-size:1.75rem}}
