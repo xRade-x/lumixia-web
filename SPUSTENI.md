@@ -1,6 +1,17 @@
 # Lumixia — spuštění na WEDOSu
 
-Připraveno pro **https://lumixia.cz**, provozovatel Auto Odolka s.r.o., IČO 10952179. Poptávky: **poptavky@lumixia.cz**, schránka u Seznam Email Profi. Doména, hosting ani schránka zatím nejsou aktivované. Tento balíček neobsahuje přístupová hesla.
+Nasazeno **23. 9. 2026 na https://lumixia.cz**, provozovatel Auto Odolka s.r.o., IČO 10952179. Poptávky: **poptavky@lumixia.cz**, schránka u Seznam Email Profi. Doména, WEDOS LowCost s PHP 8.4 i schránka jsou aktivní. Tento balíček neobsahuje přístupová hesla.
+
+## Stav prvního nasazení
+
+- Certifikát Let's Encrypt aktivní pro hlavní doménu i www. HTTPS, přesměrování, bezpečnostní hlavičky, chráněné cesty a vlastní 404 ověřeny na přiděleném serveru s platným certifikátem.
+- Jedna označená testovací poptávka skutečně dorazila do doručené pošty Email Profi ve 20:04 CEST. Obsah i české znaky byly zkontrolovány. Interní doručení u Seznamu samo neprokazuje DKIM pro externí poštu.
+- Všech 31 veřejných souborů odpovídá vydání; FTP změnilo u textů pouze konce řádků. Hash strukturovaných dat zůstává kompatibilní s CSP. Neplatný původ, chybějící token, neplatný e-mail, honeypot a příliš velký požadavek byly odmítnuty bez odesílání pošty.
+- WEDOS nepovoluje `Options -MultiViews`; veřejný soubor používá podporované `Options -Indexes`. Při aktualizaci tuto volbu nevracet.
+- Konfigurace i SMTP heslo jsou mimo `www`, soubory mají práva 600 a neveřejné složky 700. Heslo uživatel zadal přímo na hostingu do `lumixia-private/smtp-password.txt`; `config.php` ho čte odtud. Tyto dva soubory při dalších nasazeních nepřepisovat.
+- Původní obsah hostingu je zachovaný mimo veřejnou složku jako `www-puvodni-20260923` a v místní záloze. Hostitelské složky `tmp` a `session` zůstaly beze změny.
+- Veřejné resolvery Google a Cloudflare už doménu překládají správně. Místní resolver a prohlížeč při závěrečné kontrole stále vracely staré nenalezení domény. Síťové kontroly proto použily explicitní mapování na přidělenou IP při zachování ověřování HTTPS. Vizuální kontrolu ostré URL na počítači a mobilu dokončit po aktualizaci místní DNS cache.
+- Google Search Console, dvoufázové ověření účtů, obnova domény a provozní úklid schránky nebyly tímto nasazením nastavovány; zůstávají body pro provozovatele podle seznamu níže.
 
 ## Co zařídit před nahráním
 
@@ -25,7 +36,7 @@ V neveřejné složce zkopírovat config.example.php na config.php. Přes zabezp
 
 Nastavit práva config.php na 600 a neveřejným složkám na 700, pokud to nastavení hostingu dovolí. PHP musí umět číst konfiguraci a zapisovat pouze do lumixia-private/runtime. Veřejné statické soubory mají být bez práva zápisu pro návštěvníky. Nikdy nepoužívat oprávnění 777.
 
-Nastavit enabled na true až při řízeném spuštění a provést test. Bez konfigurace nebo při chybě SMTP formulář vrací chybu a netvrdí, že poptávku odeslal. Žádné zprávy v této přípravě nebyly skutečně odeslány.
+Nastavit enabled na true až při řízeném spuštění a provést test. Bez konfigurace nebo při chybě SMTP formulář vrací chybu a netvrdí, že poptávku odeslal. Při prvním nasazení byla odeslána a doručena jedna výslovně označená testovací zpráva.
 
 SMTP: smtp.seznam.cz, port 465, TLS s ověřováním certifikátu, přihlášení celou e-mailovou adresou. Zákaznický e-mail je jen Reply-To; příjemce a odesílatel jsou pevné. Neposílá automatické kopie zákazníkům ani přílohy.
 
